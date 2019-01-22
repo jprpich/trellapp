@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: #496fc5;
+  color: white;
+  font-size: 30px;
+  font-family: 'Sarabun', sans-serif;
+}
+
+.app-signup-button {
+  background: #45b37b;
+  height: 75px; 
+  width: 500px;
+  color: white;
+  font-size: 25px;
+  border-radius: 25px;
+}

@@ -11,6 +11,9 @@ const App = () => {
   return (
     <div>
       <h1>Trellapp</h1>
+      <h2>Trello lets you work more collaboratively and get more done.</h2>
+      <p>Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible and rewarding way.</p>
+      <button class="app-signup-button">Sign Up – It’s Free!</button>
       <GreetingContainer />
 
       <AuthRoute path="/login" component={LoginFormContainer} />
