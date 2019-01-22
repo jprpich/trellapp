@@ -4,7 +4,6 @@ import { signup } from '../../actions/session_actions';
 
 const msp = (state) => {
   return {
-
     errors: Object.values(state.errors.session),
     formType: "signup"
   };

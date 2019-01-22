@@ -38,13 +38,12 @@ class SessionForm extends React.Component {
       return <li key={idx}>{error}</li>
     })
     return (
-      <div>
-        
+      <div>        
         <Link to={this.props.formType === "signup" ? "/login" : "/signup"}>{this.props.formType === "signup" ? "Log in" : "Sign Up"}</Link>
         <h2>{this.props.formType === "signup" ? "Sign up" : "Log in"}</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" onChange={this.updateEmail.bind(this)} value={this.state.email} placeholder="email" />
-          <input type="text" onChange={this.updatePassword.bind(this)} value={this.state.password} placeholder="password" />
+          <input type="email" onChange={this.updateEmail.bind(this)} value={this.state.email} placeholder="email" />
+          <input type="password" onChange={this.updatePassword.bind(this)} value={this.state.password} placeholder="password" />
           <button>Submit!</button>
         </form>
         <ul>
