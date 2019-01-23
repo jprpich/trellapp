@@ -15,10 +15,14 @@
  */
 
 body {
+  font-size: 20px;
+  font-family: 'Sarabun', sans-serif;
+}
+
+/* greeting component */
+.greeting-component {
   background: #496fc5;
   color: white;
-  font-size: 30px;
-  font-family: 'Sarabun', sans-serif;
 }
 
 .app-signup-button {
@@ -29,3 +33,7 @@ body {
   font-size: 25px;
   border-radius: 25px;
 }
+
+
+
+
