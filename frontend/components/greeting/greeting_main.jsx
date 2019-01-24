@@ -8,6 +8,10 @@ class GreetingMain extends React.Component {
 
   render() {
     return (
+      <>
+      <div className="space-holder">
+
+      </div>
       <div className="greeting-main">
         <div className="layout-two-col">
           <div className="hero-text">
@@ -20,6 +24,7 @@ class GreetingMain extends React.Component {
           </div>
         </div>
       </div>
+      </>
     )
   }
 }
