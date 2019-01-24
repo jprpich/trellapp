@@ -1,0 +1,16 @@
+.boards-main {
+  background: #f8f9f9;
+  ul {
+    display: flex;
+  }
+  li {
+    background: #2867a2;
+    width: 187px;
+    height: 100px;
+    margin: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

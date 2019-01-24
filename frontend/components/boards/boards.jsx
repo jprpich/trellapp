@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Navbar from './navbar';
+import BoardFormContainer from './board_form_container';
 
 class Boards extends React.Component {
   constructor(props) {
@@ -12,19 +13,21 @@ class Boards extends React.Component {
 
   render() {
     const boards = this.props.boards.map(board => {
-      return <li key={board.id}>{board.title}</li>
+      return <li className="board-box" key={board.id}>{board.title}</li>
     })
     return (
       <>
-        <div className="greeting-component">
-          <h2>Welcome, {this.props.currentUser.email}!</h2>
-          <button onClick={this.props.logout}>Logout</button>
+        <Navbar currentUser={this.props.currentUser} logout={this.props.logout}/>
+        <div className="boards-main">
+          <i className="far fa-user"></i>
+          <h2>Boards</h2> 
+          <ul>
+            {boards}
+          </ul>
         </div>
-        <h1>These are your boards</h1>
-        <ul>
-          {boards}
-        </ul>
-        <h1>hello world </h1>
+        <BoardFormContainer />
+        
+        
       </>
     )
   }

@@ -1,0 +1,25 @@
+.navbar {
+  background: #296aa7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+  .header-user {
+    display: flex;
+  }
+
+  div.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    h1 {
+      font-family: 'Pacifico', cursive;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: rgb(235, 241, 242);
+    }
+  }
+}
