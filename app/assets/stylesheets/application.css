@@ -16,9 +16,24 @@
 
 body {
   font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
   font-family: 'Sarabun', sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: 'Charlie Display','Helvetica','Arial',sans-serif;
+  font-weight: 600;
+}
+
+p,a,span {
+  font-family: 'Charlie Text','Helvetica','Arial',sans-serif;
+}
+
+h1 {
+  line-height: 1.2em;
+
+}
 
 
 

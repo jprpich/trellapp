@@ -13,9 +13,14 @@
     display: flex;
     align-items: center;
     font-size: 30px;
-    font-family: 'Pacifico', cursive;
+    h1 {
+      font-family: 'Pacifico', cursive;
+    }
     a {
       color: white;
+    }
+    a:hover {
+      color: rgb(235, 241, 242);
     }
   }
 
@@ -26,6 +31,9 @@
       color: white;
       margin-right: 20px;
     }
+    .login:hover {
+      color: rgb(235, 241, 242);
+    }
     .signup{
       color: #3079be;
       background: white;
@@ -34,6 +42,9 @@
       border-radius: 4px;
       box-shadow: 0 2px #c1c7d0;
       letter-spacing: 0.5px;
+    }
+    .signup:hover {
+      background-color: rgb(235, 241, 242);
     }
   }
 

@@ -1,17 +1,87 @@
 .greeting-main {
-  margin-top: 80px;
-  .app-signup-button {
-    background: #45b37b;
-    height: 75px; 
-    width: 500px;
-    color: white;
-    font-size: 25px;
-    border-radius: 25px;
+  background: #3079be;
+  color: white;
+  .layout-two-col {
+    display: flex;
+    width: 1230px;
+    margin: 0 auto;
+    
+    .hero-text {
+
+      width: 600px;
+      padding-right: 100px; 
+      box-sizing: border-box;
+     
+      h1 {
+        font-size: 47px;
+        margin-top: 50px;
+      }
+
+      .big {
+        font-size: 22px;
+        margin: 24px 34px 24px 0;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+
+      .signup-button {
+          background: #36B37E;
+          height: 75px; 
+          font-weight: 500;
+          padding: 21px 40px; 
+          color: white;
+          font-size: 25px;
+          box-shadow: 0 3px #006644;
+          margin: 20px 0;
+          border-radius: 6px;
+      }
+
+      .signup-button:hover {
+        color: rgb(229, 238, 229);
+      }
+
+    }
+
+    .hero-image {
+      width: 600px;
+      margin: 20px;
+    }
+  
   }
-
-
-
-
-
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
