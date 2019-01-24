@@ -50,6 +50,16 @@ class SessionForm extends React.Component {
     });
   }
 
+  submitDemoUser(e){
+    e.preventDefault();
+    const user = Object.assign({}, { email: "email@domain.com", password: "123456"});
+    this.props.processDemoUser(user);
+    this.setState({
+      email: "",
+      password: ""
+    });
+  }
+
   render() {
     let error; 
     if (this.props.errors.length >= 1) {
@@ -75,7 +85,7 @@ class SessionForm extends React.Component {
             type="email" 
             onChange={this.updateEmail.bind(this)} 
             value={this.state.email} 
-            placeholder="e.g, leela@planetexpress.nnyc" 
+            placeholder="e.g, email@domain.com" 
           />
   
           <label htmlFor="password">Password</label>
@@ -94,10 +104,12 @@ class SessionForm extends React.Component {
             value={this.props.formType === "signup" ? "Create New Account" : "Log In"}
           />
 
-          <span className="demo-user-span">
-            <i className="fas fa-user"></i><input type="submit" value="Sign up with Demo User" className="demo-user" />
-          </span> 
+          
         </form>
+
+        <button onClick={this.submitDemoUser.bind(this)} className="demo-user-button">
+          <i className="fas fa-user"></i>Sign up with Demo User 
+        </button>
        
         <footer>
           <ul>

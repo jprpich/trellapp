@@ -50,25 +50,23 @@
     background: #5aac44;
   }
 
-  // input type submit only demo-user 
-  input.demo-user {
-      font-size: 16px;
-      background: #fff;
-      border: 2px solid #cdd2d4;
-      color: black;
-      // padding: 11px 10px;
-  }
 
-  // font awesome icon 
-  .fa-user {
-    position: absolute;
-    left: 65px;
-    z-index: 2;
-    top: 13px;
-  }
+  .demo-user-button {
 
-  .demo-user-span {
+    width: 460px;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
     position: relative;
+    
+    .fa-user {
+      position: absolute;
+      left: 65px;
+      z-index: 2;
+      top: 13px;
+    }
+
   }
 
   label {
