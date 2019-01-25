@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class BoardForm extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +29,7 @@ class BoardForm extends React.Component {
             value={this.state.title}
             placeholder="title"
           />
-          <button>Submit</button>
+          <button className="create-board-button">Create Board</button>
         </form>
       </div>
     )

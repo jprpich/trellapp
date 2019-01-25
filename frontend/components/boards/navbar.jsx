@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -26,10 +25,6 @@ class Navbar extends React.Component {
           <button onClick={this.props.logout}>Logout</button>
         </div>
 
-
-        
-        
-        
       </div>
     )
   }
