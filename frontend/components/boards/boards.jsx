@@ -12,7 +12,7 @@ class Boards extends React.Component {
 
   render() {
     const boards = this.props.boards.map(board => {
-      return <li className="board-box" key={board.id}>{board.title}</li>
+      return <Link to={`boards/${board.id}`}><li className="board-box" key={board.id}>{board.title}</li></Link>  
     })
     
     return (

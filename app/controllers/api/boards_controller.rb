@@ -17,6 +17,12 @@ class Api::BoardsController < ApplicationController
     render :show
   end
 
+  def destroy 
+    @board = current_user.boards.find(params[:id])
+    @board.destroy 
+    head :no_content
+  end
+
   def board_params
     params.require(:board).permit(:title) 
   end

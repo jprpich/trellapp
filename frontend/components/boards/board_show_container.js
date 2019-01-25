@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
-import {fetchBoard} from '../../actions/board_actions';
+import {fetchBoard, deleteBoard} from '../../actions/board_actions';
 
 const msp = (state, ownProps) => {
   return {
@@ -10,7 +10,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    fetchBoard: (id) => dispatch(fetchBoard(id))
+    fetchBoard: (id) => dispatch(fetchBoard(id)),
+    deleteBoard: (id) => dispatch(deleteBoard(id))
   }
 };
 

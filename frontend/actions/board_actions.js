@@ -3,6 +3,7 @@ export const RECEIVE_BOARDS = "RECEIVE_BOARDS";
 export const RECEIVE_BOARD = "RECEIVE_BOARD";
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 export const CLEAR_BOARD_ERRORS = "CLEAR_BOARD_ERRORS";
+export const DELETE_BOARD = "DELETE_BOARD";
 
 export const receiveBoards = () => dispatch => {
   return ApiUtil.receiveBoards().then(response => {
@@ -32,6 +33,12 @@ export const fetchBoard = (id) => dispatch => {
       return dispatch(receiveErrors(errors));
     }
   );
+};
+
+export const deleteBoard = (id) => dispatch => {
+  return ApiUtil.deleteBoard(id).then(() => {
+    return dispatch({ type: DELETE_BOARD, boardId: id });
+  });
 };
 
 const receiveErrors = (errors) => {
