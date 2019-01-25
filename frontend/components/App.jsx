@@ -8,6 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import BoardsContainer from './boards/boards_container';
 import Modal from './modal';
 import NavbarContainer from './boards/navbar_container';
+import BoardShowContainer from './boards/board_show_container';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
 
       <ProtectedRoute path="/" component={NavbarContainer} />
       <ProtectedRoute exact path="/boards" component={BoardsContainer} />
+      <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
     </div>
   )
 }

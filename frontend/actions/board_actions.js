@@ -24,6 +24,16 @@ export const createBoard = (board) => dispatch => {
   );
 };
 
+export const fetchBoard = (id) => dispatch => {
+  return ApiUtil.fetchBoard(id).then(response => {
+    return dispatch({ type: RECEIVE_BOARD, board: response });
+  },
+    errors => {
+      return dispatch(receiveErrors(errors));
+    }
+  );
+};
+
 const receiveErrors = (errors) => {
   return ({
     type: RECEIVE_BOARD_ERRORS,

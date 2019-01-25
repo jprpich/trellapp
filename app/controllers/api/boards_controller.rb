@@ -12,6 +12,11 @@ class Api::BoardsController < ApplicationController
     end
   end
 
+  def show 
+    @board = current_user.boards.find(params[:id])
+    render :show
+  end
+
   def board_params
     params.require(:board).permit(:title) 
   end

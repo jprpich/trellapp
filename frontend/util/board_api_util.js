@@ -12,3 +12,11 @@ export const createBoard = (board) => {
     data: {board}
   });
 };
+
+export const fetchBoard = (id) => {
+  return $.ajax({
+    method: "get",
+    url: `api/boards/${id}`
+  })
+}
+
