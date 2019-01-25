@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,6 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar">
-
         <div className="header-board-buttons">
           <button><i className="fas fa-home"></i></button>   
         </div>
@@ -20,6 +20,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="header-user">
+          {this.props.otherForm}
           <button><i className="fas fa-plus"></i></button>
           <button>{this.props.currentUser.email}</button>
           <button onClick={this.props.logout}>Logout</button>

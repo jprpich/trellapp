@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import BoardFormContainer from './board_form_container';
+import { Link } from 'react-router-dom';
 
 class Boards extends React.Component {
   constructor(props) {
@@ -18,23 +19,33 @@ class Boards extends React.Component {
     
     return (
       <>
-        <Navbar currentUser={this.props.currentUser} logout={this.props.logout}/>
+        <Navbar currentUser={this.props.currentUser} logout={this.props.logout} otherForm={this.props.otherForm}/>
 
 
         <div className="boards-main">
-          <i className="far fa-user"></i>
-          <h2>Boards</h2> 
-          <ul>
-            {boards}
-          </ul>
+          <div className="left">
+            <ul>
+              <li id="first-board">
+                <Link to="/"><i className="fas fa-poll"></i>Boards</Link>
+              </li>
+              <li>
+                <Link to="/"><i className="fas fa-tablet-alt"></i>Home</Link>
+              </li>
+            </ul>
+            
+      
+          </div>
+
+          <div className="all-boards">
+            <div className="section-header">
+              <i className="far fa-user"></i>
+              <h3>Personal Boards</h3>
+            </div>
+            <ul>
+              {boards}
+            </ul>
+          </div>
         </div>
-
-
-
-
-        <BoardFormContainer />
-        
-        
       </>
     )
   }

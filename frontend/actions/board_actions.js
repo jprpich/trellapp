@@ -5,21 +5,21 @@ export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 export const CLEAR_BOARD_ERRORS = "CLEAR_BOARD_ERRORS";
 
 export const receiveBoards = () => dispatch => {
-  ApiUtil.receiveBoards().then(response => {
-    dispatch({type: RECEIVE_BOARDS, boards: response});
+  return ApiUtil.receiveBoards().then(response => {
+    return dispatch({type: RECEIVE_BOARDS, boards: response});
   },
     errors => {
-      dispatch(receiveErrors(errors));
+      return dispatch(receiveErrors(errors));
     }
   );
 };
 
 export const createBoard = (board) => dispatch => {
-  ApiUtil.createBoard(board).then(response => {
-    dispatch({ type: RECEIVE_BOARD, board: response });
+  return ApiUtil.createBoard(board).then(response => {
+    return dispatch({ type: RECEIVE_BOARD, board: response });
   },
     errors => {
-      dispatch(receiveErrors(errors));
+      return dispatch(receiveErrors(errors));
     }
   );
 };

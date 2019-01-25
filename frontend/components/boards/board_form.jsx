@@ -9,7 +9,7 @@ class BoardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBoard(this.state)
+    this.props.createBoard(this.state).then(this.props.closeModal);
   }
 
   updateTitle(e){
