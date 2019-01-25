@@ -15,9 +15,12 @@ class Boards extends React.Component {
     const boards = this.props.boards.map(board => {
       return <li className="board-box" key={board.id}>{board.title}</li>
     })
+    
     return (
       <>
         <Navbar currentUser={this.props.currentUser} logout={this.props.logout}/>
+
+
         <div className="boards-main">
           <i className="far fa-user"></i>
           <h2>Boards</h2> 
@@ -25,6 +28,10 @@ class Boards extends React.Component {
             {boards}
           </ul>
         </div>
+
+
+
+
         <BoardFormContainer />
         
         

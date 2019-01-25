@@ -3,6 +3,31 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  padding: 5px;
+
+  button {
+    color: white;
+    border: none;
+    background: #5a97c2;
+    padding: 7px 7px; 
+    border-radius: 3px;
+    margin-left: 10px;
+  }
+
+  button:hover {
+    background: #367eb1;
+  }
+
+  i {
+    font-size: 17px;
+  }
+
+  .header-board-buttons {
+    
+    
+  }
+
+
 
   .header-user {
     display: flex;
