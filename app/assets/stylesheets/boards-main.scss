@@ -37,12 +37,13 @@
     padding-left: 64px;
     margin-top: 40px;
     width: 860px;
+    
     ul {
       display: flex;
       flex-wrap: wrap;
     }
 
-    li {
+    a {
       background: #2867a2;
       width: 170px;
       height: 90px;
@@ -53,23 +54,23 @@
       cursor: pointer;
     }
 
-    li:nth-child(2n){
+    a:nth-child(2n){
       background: #a9cbe1;
     }
 
-    li:nth-child(2n):hover{
+    a:nth-child(2n):hover{
       background: #85bbdf;
     }
 
-    li:nth-child(3n) {
+    a:nth-child(3n) {
       background: #40a35b;
     }
 
-    li:nth-child(3n):hover {
+    a:nth-child(3n):hover {
       background: #49ae64;
     }
 
-    li:hover {
+    a:hover {
       background: #1c60a0;
     }
 
