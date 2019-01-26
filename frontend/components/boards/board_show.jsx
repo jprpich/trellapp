@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -7,6 +8,12 @@ class BoardShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchBoard(this.props.match.params.boardId);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.board.id != this.props.match.params.boardId) {
+      this.props.fetchBoard(this.props.match.params.boardId);
+    }
   }
 
   deleteBoard(){
@@ -18,10 +25,14 @@ class BoardShow extends React.Component {
       return null;
     } else {
       return (
-        <>
-          <h1>{this.props.board.title}</h1>
+        <div className="board-show">
+          <Link to={`/boards/${this.props.board.id}/edit`}>
+            <div className="board-title">{this.props.board.title}</div>
+          </Link>
+
+          
           <button onClick={this.deleteBoard.bind(this)}>Delete Board</button>
-        </>
+        </div>
       )
     }
   }

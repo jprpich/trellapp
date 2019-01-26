@@ -56,6 +56,9 @@ button {
   transform: translate(-50%, -50%);
 }
 
+textarea:focus, button:focus {
+  outline: none;
+}
 
 
 

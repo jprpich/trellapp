@@ -13,6 +13,14 @@ export const createBoard = (board) => {
   });
 };
 
+export const updateBoard = (board) => {
+  return $.ajax({
+    method: "patch",
+    url: `api/boards/${board.id}`,
+    data: {board}
+  });
+};
+
 export const fetchBoard = (id) => {
   return $.ajax({
     method: "get",
