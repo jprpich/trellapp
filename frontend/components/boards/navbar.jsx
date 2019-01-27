@@ -10,7 +10,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         <div className="header-board-buttons">
-          <button><i className="fas fa-home"></i></button>   
+          <Link to="/"><i className="fas fa-home"></i></Link>  
         </div>
 
         <div className="logo">
@@ -20,7 +20,7 @@ class Navbar extends React.Component {
 
         <div className="header-user">
           {this.props.otherForm}
-          <button><i className="fas fa-plus"></i></button>
+          {this.props.profileDropdown}
           <button>{this.props.currentUser.email}</button>
           <button onClick={this.props.logout}>Logout</button>
         </div>

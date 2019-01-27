@@ -12,7 +12,12 @@ const mdp = dispatch => ({
   logout: () => dispatch(logout()),
   otherForm: (
     <button onClick={() => dispatch(openModal('create board'))}>
-      Create Board!
+      <i className="fas fa-plus"></i>
+    </button>
+  ),
+  profileDropdown: (
+    <button className="profile-dropdown" onClick={() => dispatch(openModal('profile dropdown'))}>
+      DU
     </button>
   )
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import BoardFormContainer from './boards/board_form_container';
-
+import ProfileDropdownContainer from './boards/profile_dropdown_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -12,17 +12,27 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'create board':
       component = <BoardFormContainer />;
-      break;
+      return (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
+    case 'profile dropdown':
+      component = <ProfileDropdownContainer />;
+      return (
+        <div className="profile-modal-background" onClick={closeModal}>
+          <div className="profile-dropdown-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
     default:
       return null;
   }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        {component}
-      </div>
-    </div>
-  );
+
+  
 }
 
 const mapStateToProps = state => {

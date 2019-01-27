@@ -18,15 +18,25 @@
     background: #367eb1;
   }
 
+  .header-board-buttons {
+    a {
+      color: white;
+      background: #5a97c2;
+      margin-left: 2px;
+      padding: 4px 7px;
+      border-radius: 3px;
+    }
+    a:hover {
+      background: #367eb1;
+    }
+  }  
+  
+
   i {
     font-size: 17px;
   }
   
-  .header-user {
-    display: flex;
-  }
-
-  div.logo {
+  .logo {
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -38,6 +48,13 @@
     }
     a:hover {
       color: rgb(235, 241, 242);
+    }
+  }
+
+  .header-user {
+    display: flex;
+    .profile-dropdown {
+      border-radius: 50%;
     }
   }
 }
