@@ -21,8 +21,6 @@ class Navbar extends React.Component {
         <div className="header-user">
           {this.props.otherForm}
           {this.props.profileDropdown}
-          <button>{this.props.currentUser.email}</button>
-          <button onClick={this.props.logout}>Logout</button>
         </div>
 
       </div>

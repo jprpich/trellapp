@@ -1,0 +1,16 @@
+.profile-dropdown {
+  padding: 0 12px 12px;
+  background: white;
+  border-radius: 3px;
+  .profile-email {
+    color: #6b808c;
+    border-bottom: 1px solid rgba(9,45,66,.13);
+    font-size: 16px;
+    padding: 15px 32px;
+  }
+  button {
+    color: #17394d;
+    font-weight: 700;
+    border: none;
+  }
+}

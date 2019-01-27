@@ -6,15 +6,15 @@ class ProfileDropdown extends React.Component {
     super(props);
   }
 
+  handleSubmit(){
+    this.props.logout().then(this.props.closeModal);
+  }
 
   render() {
     return (
-      <div>
-        <ul>
-          <li>hey</li>
-          <li>fun</li>
-          <li>stuff</li>
-        </ul>
+      <div className="profile-dropdown">
+        <div className="profile-email">{this.props.currentUser ? this.props.currentUser.email : ""}</div>
+        <button onClick={this.handleSubmit.bind(this)}>Logout</button>
       </div>
     )
   }
