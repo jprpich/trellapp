@@ -67,8 +67,8 @@ button {
 
 .modal-child {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 47%;
   transform: translate(-50%, -50%);
 }
 

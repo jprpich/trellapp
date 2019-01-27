@@ -1,15 +1,48 @@
-.create-board-button {
-  background-color: #5aab44;
-  box-shadow: 0 1px 0 0 #3f6f21;
-  font-weight: 700;
-  line-height: 20px;
-  margin: 8px 4px 0 0;
-  padding: 6px 12px;
-  text-align: center;
-  color: white;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
-  font-size: 14px;
-  border: none;
+.board-form {
+  .form-title {
+    width: 296px;
+    padding: 10px 10px 10px 16px;
+    height: 86px;
+    border-radius: 3px;
+    background-color: rgb(0, 121, 191);
+  }
+  input[type="text"] {
+    padding: 8px 8px;
+    border-radius: 3px;
+    border: none;
+    background-color: #acc9de;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    outline: 0;
+  }
+
+  input[type="text"]:hover {
+    background-color: rgb(26, 151, 223);
+  }
+
+  input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #d4e2ed;
+    font-size: 16px;
+    outline: 0;
+  }
+  .create-board-button {
+    background-color: #5aab44;
+    box-shadow: 0 1px 0 0 #3f6f21;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 8px 4px 0 0;
+    padding: 6px 12px;
+    text-align: center;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    border: none;
+  }
+  .create-board-button:hover {
+    background: #43912e;
+  }
 }
+
