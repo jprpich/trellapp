@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resource :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :boards, only: [:index, :create, :show, :destroy, :update] do
-      resources :lists, only: [:index]
+      resources :lists, only: [:index, :create]
     end
+
+
     
   end
 end
