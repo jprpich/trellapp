@@ -6,11 +6,21 @@
     color: #6b808c;
     border-bottom: 1px solid rgba(9,45,66,.13);
     font-size: 16px;
-    padding: 15px 32px;
+    padding: 11px 29px;
   }
   button {
     color: #17394d;
     font-weight: 700;
     border: none;
+    padding: 4px 8px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+  }
+
+  button:hover {
+    background-color: #298fca;
+    color: white;
   }
 }
