@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import BoardFormContainer from './boards/board_form_container';
 import ProfileDropdownContainer from './boards/profile_dropdown_container';
+import BoardsDropdownContainer from './boards/boards_dropdown_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -22,12 +23,21 @@ function Modal({ modal, closeModal }) {
     case 'profile dropdown':
       component = <ProfileDropdownContainer />;
       return (
-        <div className="profile-modal-background" onClick={closeModal}>
+        <div className="transparent-modal-background" onClick={closeModal}>
           <div className="profile-dropdown-modal-child" onClick={e => e.stopPropagation()}>
             {component}
           </div>
         </div>
       );
+    case 'boards dropdown':
+      component = <BoardsDropdownContainer />;
+    return (
+      <div className="transparent-modal-background" onClick={closeModal}>
+        <div className="boards-modal-child" onClick={e => e.stopPropagation()}>
+          {component}
+        </div>
+      </div>
+    );
     default:
       return null;
   }

@@ -49,7 +49,14 @@ button {
   z-index: 10;
 }
 
-.profile-modal-background {
+.modal-child {
+  position: absolute;
+  top: 20%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+.transparent-modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -65,10 +72,11 @@ button {
   transform: translate(-50%, -50%);
 }
 
-.modal-child {
+
+.boards-modal-child {
   position: absolute;
-  top: 20%;
-  left: 47%;
+  top: 8%;
+  left: 8%;
   transform: translate(-50%, -50%);
 }
 

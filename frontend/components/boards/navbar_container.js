@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Navbar from './navbar';
-import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = state => ({
@@ -17,6 +16,11 @@ const mdp = dispatch => ({
   profileDropdown: (
     <button className="profile-dropdown" onClick={() => dispatch(openModal('profile dropdown'))}>
       DU
+    </button>
+  ),
+  boardsDropdown: (
+    <button className="boards-button" onClick={() => dispatch(openModal('boards dropdown'))}><i className="fas fa-bars"></i>
+      Boards
     </button>
   )
 });

@@ -11,6 +11,7 @@ class Navbar extends React.Component {
       <div className="navbar">
         <div className="header-board-buttons">
           <Link to="/"><i className="fas fa-home"></i></Link>  
+          {this.props.boardsDropdown}
         </div>
 
         <div className="logo">
