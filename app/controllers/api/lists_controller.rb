@@ -4,7 +4,6 @@ class Api::ListsController < ApplicationController
     @lists = List.all.where(board_id: params[:board_id])
   end
 
-  # how do we implement this?
   def create 
     @list = List.new(list_params)
     if @list.save 
@@ -14,7 +13,12 @@ class Api::ListsController < ApplicationController
     end
   end
 
-  # how should we receive params?
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy 
+    head :no_content
+  end
+
   private
   def list_params
     params.require(:list).permit(:title, :board_id)

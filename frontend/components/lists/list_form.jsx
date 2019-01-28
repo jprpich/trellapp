@@ -9,7 +9,6 @@ class ListForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('hello world');
     this.props.createList({title: this.state.title, board_id: this.props.match.params.boardId});
   }
 

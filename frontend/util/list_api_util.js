@@ -12,3 +12,10 @@ export const createList = (list) => {
     data: { list }
   });
 };
+
+export const deleteList = (id) => {
+  return $.ajax({
+    method: "delete",
+    url: `api/lists/${id}`
+  })
+}

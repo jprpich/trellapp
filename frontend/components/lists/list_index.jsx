@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import ListItem from './list_item';
 
 class Lists extends React.Component {
   constructor(props) {
@@ -11,16 +11,22 @@ class Lists extends React.Component {
     this.props.receiveLists(this.props.match.params.boardId);
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps.board.id != this.props.match.params.boardId){
+      this.props.receiveLists(this.props.match.params.boardId);
+    }
+  }
+
   render() {
     const lists = this.props.lists.map(list => {
-      return <li key={list.id}>{list.title}</li>
+      return <ListItem key={list.id} list={list} deleteList={this.props.deleteList} />
     })
     
     return (
       <>
-        <ul>
+        <div className="list-index">
           {lists}
-        </ul>
+        </div>
       </>
     )
   }
