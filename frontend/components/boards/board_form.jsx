@@ -28,7 +28,7 @@ class BoardForm extends React.Component {
               onChange={this.updateTitle.bind(this)}
               value={this.state.title}
               placeholder="Add board title"
-              autofocus="autofocus"
+              autoFocus="autofocus"
             />
           </div>
           <button className="create-board-button">Create Board</button>

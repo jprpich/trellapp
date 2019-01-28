@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class BoardsDropdown extends React.Component {
   constructor(props) {
@@ -7,14 +7,13 @@ class BoardsDropdown extends React.Component {
   }
 
   render() {
-    const lis = this.props.boards.map(board => {
-      return <li key={board.id}>{board.title}</li>
+    const boards = this.props.boards.map(board => {
+      return <li><Link onClick={this.props.closeModal} key={board.id} to={`/boards/${board.id}`}>{board.title}</Link></li>  
     })
     return (
-      <div>
-        <p>hello world</p>
+      <div className="boards-dropdown">
         <ul>
-          {lis}
+          {boards}
         </ul>
       </div>
     )

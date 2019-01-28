@@ -72,12 +72,19 @@ button {
   transform: translate(-50%, -50%);
 }
 
+.boards-modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
 
 .boards-modal-child {
   position: absolute;
-  top: 8%;
-  left: 8%;
-  transform: translate(-50%, -50%);
+  top: 7%;
+  left: 1%;
 }
 
 textarea:focus, button:focus {
