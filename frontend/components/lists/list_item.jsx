@@ -17,7 +17,7 @@ class ListItem extends React.Component {
       <>
         <div className="list-item">
           {this.props.list.title}
-          <button className="delete-list" onClick={this.deleteList.bind(this)}>Delete List</button>
+          <button className="delete-list" onClick={this.deleteList.bind(this)}><i class="fas fa-trash-alt"></i></button>
         </div>
       </>
     )

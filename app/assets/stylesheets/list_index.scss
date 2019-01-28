@@ -1,6 +1,8 @@
 .list-index {
   display: flex;
   .list-item {
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     margin: 10px;
     background-color: #e0e3e6;
@@ -9,5 +11,13 @@
     color: #17394d;
     font-weight: 700;
     font-size: 14px;
+    .delete-list {
+      border-radius: 3px;
+      padding: 5px;
+      background: #6496c4;
+      i {
+        color: white;
+      }
+    }
   }
 }
