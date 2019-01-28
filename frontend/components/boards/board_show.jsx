@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ListsContainer from '../lists/list_index_container';
-
+import ListFormContainer from '../lists/list_form_container';
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -27,6 +27,7 @@ class BoardShow extends React.Component {
           </Link>
           <button onClick={this.deleteBoard.bind(this)}>Delete Board</button>
           <ListsContainer />
+          <ListFormContainer />
         </div>
       )
     }

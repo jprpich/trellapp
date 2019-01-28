@@ -13,7 +13,7 @@ const mdp = dispatch => ({
       <i className="fas fa-plus"></i>
     </button>
   ),
-  profileDropdown: (
+  profileDropdown: (  
     <button className="profile-dropdown" onClick={() => dispatch(openModal('profile dropdown'))}>
       DU
     </button>
