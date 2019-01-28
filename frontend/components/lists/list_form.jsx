@@ -10,6 +10,9 @@ class ListForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createList({title: this.state.title, board_id: this.props.match.params.boardId});
+    this.setState({
+      title: ""
+    })
   }
 
   updateTitle(e) {
@@ -22,18 +25,15 @@ class ListForm extends React.Component {
 
     return (
       <>
-        <div>
+        <div className="list-form"> 
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <div>
               <input
                 type="text"
                 onChange={this.updateTitle.bind(this)}
                 value={this.state.title}
-                placeholder="Add list title"
+                placeholder="+ Add another list"
                 autoFocus="autofocus"
               />
-            </div>
-            <button>Create List</button>
           </form>
         </div>
       </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ListsContainer from '../lists/list_index_container';
-import ListFormContainer from '../lists/list_form_container';
+
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class BoardShow extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if(prevProps.board.id != this.props.match.params.boardId){
+    if(prevProps.board && (prevProps.board.id != this.props.match.params.boardId)){
       this.props.fetchBoard(this.props.match.params.boardId);
     }
   }
@@ -36,7 +36,7 @@ class BoardShow extends React.Component {
           </div>
           
           <ListsContainer />
-          <ListFormContainer />
+          
         </div>
       )
     }

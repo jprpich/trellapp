@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListItem from './list_item';
+import ListFormContainer from './list_form_container';
 
 class Lists extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Lists extends React.Component {
       <>
         <div className="list-index">
           {lists}
+          <ListFormContainer />
         </div>
       </>
     )

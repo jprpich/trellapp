@@ -8,13 +8,11 @@ class BoardsDropdown extends React.Component {
 
   render() {
     const boards = this.props.boards.map(board => {
-      return <li><Link onClick={this.props.closeModal} key={board.id} to={`/boards/${board.id}`}>{board.title}</Link></li>  
+      return <Link onClick={this.props.closeModal} key={board.id} to={`/boards/${board.id}`}><div className="dropdown-item">{board.title}</div></Link>
     })
     return (
       <div className="boards-dropdown">
-        <ul>
           {boards}
-        </ul>
       </div>
     )
   }
