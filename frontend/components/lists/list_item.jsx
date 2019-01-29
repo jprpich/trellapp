@@ -14,8 +14,12 @@ class ListItem extends React.Component {
     return (
       <>
         <div className="list-item">
-          {this.props.list.title}
-          <button className="delete-list" onClick={this.deleteList.bind(this)}><i className="fas fa-trash-alt"></i></button>
+          <div className="list-title">
+            <h2>{this.props.list.title}</h2>
+            <button className="delete-list" onClick={this.deleteList.bind(this)}><i className="fas fa-trash-alt"></i></button>
+          </div>
+          
+          
           <CardIndexContainer listId={this.props.list.id}/>
         </div>
       </>

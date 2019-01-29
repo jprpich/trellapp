@@ -19,14 +19,10 @@ class Cards extends React.Component {
       }
     })
     return (
-      <>
-        <div className="card-index">
-          <ul>
-            {cards}
-          </ul>
-          <CardFormContainer listId={this.props.listId}/>
-        </div>
-      </>
+      <div className="card-index">  
+        {cards}
+        <CardFormContainer listId={this.props.listId}/>
+      </div>
     )
   }
 }

@@ -1,8 +1,13 @@
 .list-index {
   display: flex;
   .list-item {
-    display: flex;
-    justify-content: space-between;
+    .list-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    height: 100%;
+    
     padding: 10px;
     margin: 10px;
     background-color: #e0e3e6;

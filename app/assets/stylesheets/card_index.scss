@@ -1,0 +1,20 @@
+.card-index {
+  .card-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0px 0px 10px 0px;
+    border-radius: 3px;
+    padding: 6px;
+    width: 238px;
+    color: #17394d;
+    .delete-card {
+      border-radius: 3px;
+      padding: 5px;
+      background: rgb(228, 108, 108);
+      i {
+        color: white;
+      }
+    }
+  }
+}
