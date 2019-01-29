@@ -1,10 +1,3 @@
-export const receiveCards = listId => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/lists/${listId}/cards`
-  });
-};
-
 export const createCard = (card) => {
   return $.ajax({
     method: "POST",

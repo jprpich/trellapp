@@ -27,7 +27,7 @@ export const createBoard = (board) => dispatch => {
 
 export const updateBoard = (board) => dispatch => {
   return ApiUtil.updateBoard(board).then(response => {
-    return dispatch({ type: RECEIVE_BOARD, board: response });
+    return dispatch({ type: RECEIVE_BOARD, data: response });
   },
     errors => {
       return dispatch(receiveErrors(errors));

@@ -8,16 +8,6 @@ class Lists extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    // this.props.receiveLists(this.props.match.params.boardId);
-  }
-
-  componentDidUpdate(prevProps){
-    // if(prevProps.board.id != this.props.match.params.boardId){
-    //   this.props.receiveLists(this.props.match.params.boardId);
-    // }
-  }
-
   render() {
     const lists = this.props.lists.map(list => {
       return <ListItem key={list.id} list={list} deleteList={this.props.deleteList} />

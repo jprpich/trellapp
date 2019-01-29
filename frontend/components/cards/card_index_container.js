@@ -5,12 +5,12 @@ import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   return {
-    cards: Object.values(state.entities.cards)
-  }
+    cards: Object.values(state.entities.cards),
+    listId: ownProps.listId
+  };
 };
 
 const mdp = dispatch => ({
-  // receiveCards: (listId) => dispatch(receiveCards(listId)),
   deleteCard: (cardId) => dispatch(deleteCard(cardId))
 });
 
