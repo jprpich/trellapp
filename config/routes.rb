@@ -12,5 +12,7 @@ Rails.application.routes.draw do
       resources :cards, only: [:create]
     end
 
+    resources :cards, only: [:destroy] 
+
   end
 end

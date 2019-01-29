@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import Cards from './card_index';
-import { receiveCards, deleteCard } from '../../actions/card_actions';
+import { deleteCard } from '../../actions/card_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   return {
-    cards: Object.values(state.entities.cards),
-    listId: ownProps.listId
+    cards: Object.values(state.entities.cards)
   };
 };
 

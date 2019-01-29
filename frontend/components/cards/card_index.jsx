@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import CardItem from './card_item';
+import CardFormContainer from './card_form_container';
+
 
 class Cards extends React.Component {
   constructor(props) {
@@ -10,7 +13,7 @@ class Cards extends React.Component {
   render() {
     const cards = this.props.cards.map(card => {
       if (card.list_id == this.props.listId) {
-        return <li key={card.id}>{card.title}</li>
+        return <CardItem key={card.id} card={card} deleteCard={this.props.deleteCard}></CardItem >
       } else {
         return null
       }
@@ -21,6 +24,7 @@ class Cards extends React.Component {
           <ul>
             {cards}
           </ul>
+          <CardFormContainer listId={this.props.listId}/>
         </div>
       </>
     )
