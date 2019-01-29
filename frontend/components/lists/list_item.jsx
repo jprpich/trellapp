@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CardIndexContainer from '../cards/card_index_container';
 
 
 class ListItem extends React.Component {
@@ -17,7 +17,8 @@ class ListItem extends React.Component {
       <>
         <div className="list-item">
           {this.props.list.title}
-          <button className="delete-list" onClick={this.deleteList.bind(this)}><i class="fas fa-trash-alt"></i></button>
+          <button className="delete-list" onClick={this.deleteList.bind(this)}><i className="fas fa-trash-alt"></i></button>
+          <CardIndexContainer />
         </div>
       </>
     )

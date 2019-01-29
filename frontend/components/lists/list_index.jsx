@@ -9,13 +9,13 @@ class Lists extends React.Component {
   }
 
   componentDidMount(){
-    this.props.receiveLists(this.props.match.params.boardId);
+    // this.props.receiveLists(this.props.match.params.boardId);
   }
 
   componentDidUpdate(prevProps){
-    if(prevProps.board.id != this.props.match.params.boardId){
-      this.props.receiveLists(this.props.match.params.boardId);
-    }
+    // if(prevProps.board.id != this.props.match.params.boardId){
+    //   this.props.receiveLists(this.props.match.params.boardId);
+    // }
   }
 
   render() {

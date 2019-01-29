@@ -1,0 +1,1 @@
+json.extract! @card, :id, :title, :description, :due_date

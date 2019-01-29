@@ -11,7 +11,6 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-  receiveLists: (boardId) => dispatch(receiveLists(boardId)),
   deleteList: (listId) => dispatch(deleteList(listId))
 });
 
