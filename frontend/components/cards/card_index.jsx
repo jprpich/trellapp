@@ -10,9 +10,9 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    const cards = this.props.cards.map(card => {
+    const cards = this.props.cards.map((card, index) => {
       if (card.list_id == this.props.listId) {
-        return <CardItem key={card.id} card={card} deleteCard={this.props.deleteCard}></CardItem >
+        return <CardItem key={card.id} card={card} deleteCard={this.props.deleteCard} index={index}></CardItem >
       } else {
         return null
       }

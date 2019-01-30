@@ -5,7 +5,8 @@ import {withRouter} from 'react-router-dom';
 
 const msp = state => {
   return {
-    lists: Object.values(state.entities.lists)
+    lists: Object.values(state.entities.lists),
+    initialData: state.entities
   } 
 };
 

@@ -1,29 +1,34 @@
 .list-index {
   display: flex;
-  .list-item {
+  .drag-drop-context {
+    display: flex;
     height: 100%; 
-    padding: 10px;
-    margin: 10px;
-    background-color: #e0e3e6;
-    border-radius: 3px;
-    width: 250px;
-    color: #17394d;
-    font-weight: 700;
-    font-size: 14px;
-    
-    .list-title {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    
-    .delete-list {
+    .list-item {
+      height: 100%; 
+      padding: 10px;
+      margin: 10px;
+      background-color: #e0e3e6;
       border-radius: 3px;
-      padding: 5px;
-      background: #6496c4;
-      i {
-        color: white;
+      width: 250px;
+      color: #17394d;
+      font-weight: 700;
+      font-size: 14px;
+
+      .list-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+    
+      .delete-list {
+        border-radius: 3px;
+        padding: 5px;
+        background: #6496c4;
+        i {
+          color: white;
+        }
       }
     }
   }
+  
 }

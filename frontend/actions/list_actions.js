@@ -5,10 +5,7 @@ export const DELETE_LIST = "DELETE_LIST";
 export const createList = (list) => dispatch => {
   return ListApiUtil.createList(list).then(response => {
     return dispatch({ type: RECEIVE_LIST, list: response });
-  },
-    errors => {
-      return dispatch(receiveErrors(errors));
-    }
+  }
   );
 };
 
