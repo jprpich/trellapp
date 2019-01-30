@@ -22,21 +22,18 @@ class CardForm extends React.Component {
   }
 
   render() {
-
     return (
-      <>
-        <div className="card-form">
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            <input
-              type="text"
-              onChange={this.updateTitle.bind(this)}
-              value={this.state.title}
-              placeholder="+ Add another card"
-              autoFocus="autofocus"
-            />
-          </form>
-        </div>
-      </>
+      <div className="card-form">
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input
+            type="text"
+            onChange={this.updateTitle.bind(this)}
+            value={this.state.title}
+            placeholder="+ Add another card"
+            autoFocus="autofocus"
+          />
+        </form>
+      </div>
     )
   }
 }

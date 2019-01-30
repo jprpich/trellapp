@@ -10,19 +10,59 @@ class ListIndex extends React.Component {
     this.state = this.props.initialData;
   }
 
+  // componentDidUpdate(prevProps){
+  //   if (this.props.lists && (Object.values(prevProps.lists).length !== Object.values(this.props.lists).length)){
+  //     this.setState({lists: this.props.lists})
+  //   }
+  // }
+
   onDragEnd(result) {
-    // reorder our column
+    const { destination, source, draggableId } = result;
+    if(!destination){
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index 
+    ) {
+      return;
+    }
+
+    const list = this.state.lists[source.droppableId];
+    const newCardIds = Array.from(list.cardIds);
+
+
+    newCardIds.splice(source.index, 1);
+    newCardIds.splice(destination.index, 0, draggableId);
+
+
+    const newList = {
+      ...list,
+      cardIds: newCardIds
+    };
+
+    const newState = {
+      ...this.state,
+      lists: {
+        ...this.state.lists,
+        [newList.id]: newList
+      }
+    }
+    this.setState(newState)
+
+
   }
 
   render() {
-    
-    const lists = this.props.lists.map(list => {
+    const lists = Object.values(this.state.lists).map(list => {
       return <ListItem key={list.id} list={list} deleteList={this.props.deleteList} />
     })
+
     
     return (
       <div className="list-index">
-        <DragDropContext onDragEnd={this.onDragEnd}>
+        <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
           <div className="drag-drop-context">
             {lists}
           </div>
