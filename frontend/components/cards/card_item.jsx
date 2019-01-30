@@ -11,12 +11,10 @@ class CardItem extends React.Component {
 
   render() {
     return (
-      <>
-        <div className="card-item">
-          {this.props.card.title}
-          <button className="delete-card" onClick={this.deleteCard.bind(this)}><i className="fas fa-trash-alt"></i></button>
-        </div>
-      </>
+      <div className="card-item">
+        {this.props.card.title}
+        <button className="delete-card" onClick={this.deleteCard.bind(this)}><i className="fas fa-trash-alt"></i></button>
+      </div>
     )
   }
 }

@@ -4,11 +4,10 @@ import CardItem from './card_item';
 import CardFormContainer from './card_form_container';
 
 
-class Cards extends React.Component {
+class CardIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     const cards = this.props.cards.map(card => {
@@ -27,4 +26,4 @@ class Cards extends React.Component {
   }
 }
 
-export default withRouter(Cards)
+export default withRouter(CardIndex)

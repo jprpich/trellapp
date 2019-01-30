@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import Lists from './list_index';
-import { receiveLists, deleteList } from '../../actions/list_actions';
+import { deleteList } from '../../actions/list_actions';
 import {withRouter} from 'react-router-dom';
 
-const msp = (state, ownProps) => {
+const msp = state => {
   return {
-    lists: Object.values(state.entities.lists),
-    board: state.entities.boards[ownProps.match.params.boardId] 
+    lists: Object.values(state.entities.lists)
   } 
 };
 

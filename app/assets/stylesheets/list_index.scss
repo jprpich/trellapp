@@ -1,13 +1,7 @@
 .list-index {
   display: flex;
   .list-item {
-    .list-title {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    height: 100%;
-    
+    height: 100%; 
     padding: 10px;
     margin: 10px;
     background-color: #e0e3e6;
@@ -16,6 +10,13 @@
     color: #17394d;
     font-weight: 700;
     font-size: 14px;
+    
+    .list-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
     .delete-list {
       border-radius: 3px;
       padding: 5px;

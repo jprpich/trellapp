@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ListItem from './list_item';
 import ListFormContainer from './list_form_container';
 
-class Lists extends React.Component {
+class ListIndex extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,14 +14,12 @@ class Lists extends React.Component {
     })
     
     return (
-      <>
-        <div className="list-index">
-          {lists}
-          <ListFormContainer />
-        </div>
-      </>
+      <div className="list-index">
+        {lists}
+        <ListFormContainer />
+      </div>
     )
   }
 }
 
-export default withRouter(Lists)
+export default withRouter(ListIndex)
