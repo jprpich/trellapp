@@ -67,9 +67,8 @@ button {
 
 .profile-dropdown-modal-child {
   position: absolute;
-  top: 14%;
-  left: 92%;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  right: 0px;
 }
 
 .boards-modal-child {

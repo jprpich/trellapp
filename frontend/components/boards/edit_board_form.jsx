@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class EditBoardForm extends React.Component {
   constructor(props) {
@@ -6,13 +7,9 @@ class EditBoardForm extends React.Component {
     this.state = this.props.board;
   }
 
-  componentDidMount(){
-    this.props.fetchBoard(this.props.match.params.boardId);
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateBoard(this.state).then(() => this.props.history.push(`/boards/${this.props.board.id}`));
+    this.props.updateBoard(this.state).then(this.props.closeModal);
   }
 
   updateTitle(e){
@@ -40,4 +37,4 @@ class EditBoardForm extends React.Component {
   }
 }
 
-export default EditBoardForm
+export default withRouter(EditBoardForm)

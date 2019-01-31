@@ -27,10 +27,8 @@ class BoardShow extends React.Component {
     } else {
       return (
         <div className="board-show">
-          <div className="board-show-navbar">
-            <Link to={`/boards/${this.props.board.id}/edit`}>
-              <div className="board-title">{this.props.board.title}</div>
-            </Link>
+          <div className="board-show-navbar">      
+            <div onClick={this.props.editDropdown} className="board-title">{this.props.board.title}</div>
             <button className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</button>
           </div>
           <ListIndexContainer  />

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import BoardFormContainer from './boards/board_form_container';
 import ProfileDropdownContainer from './boards/profile_dropdown_container';
 import BoardsDropdownContainer from './boards/boards_dropdown_container';
+import EditBoardFormContainer from './boards/edit_board_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -38,6 +39,15 @@ function Modal({ modal, closeModal }) {
         </div>
       </div>
     );
+    case 'edit board':
+      component = <EditBoardFormContainer />;
+      return (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
     default:
       return null;
   }

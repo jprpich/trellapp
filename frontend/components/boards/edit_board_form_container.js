@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 import EditBoardForm from './edit_board_form';
 import {fetchBoard, updateBoard} from '../../actions/board_actions';
+import { closeModal } from '../../actions/modal_actions';
 
-const msp = (state, ownProps) => ({
-  board: state.entities.boards[ownProps.match.params.boardId] || null   
-});
+const msp = (state) => {
+  return {
+    board: Object.values(state.entities.boards)[0] || null   
+  }
+};
 
 const mdp = dispatch => ({
   fetchBoard: (id) => dispatch(fetchBoard(id)),
-  updateBoard: (board) => dispatch(updateBoard(board))
+  updateBoard: (board) => dispatch(updateBoard(board)),
+  closeModal: () => dispatch(closeModal()) 
 });
 
 export default connect(msp, mdp)(EditBoardForm);

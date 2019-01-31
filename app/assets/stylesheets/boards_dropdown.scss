@@ -1,25 +1,43 @@
 .boards-dropdown {
+  .recent-boards {
+    color: #6b808c;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin-left: 45px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    i {
+      font-size: 15px;
+      margin-right: 10px
+    }
+  }
   background: white;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   width: 280px;
   height: 100%;
-  
+  padding-top: 2px;
   a {
     color: #17394d;
   }
 
   .dropdown-item {
+    .board-title {
+      margin-left: 40px;
+    }
     font-weight: 700;
     font-size: 14px;
-    padding: 10px;
-    margin: 10px;
+    padding: 9px;
+    margin: 4px;
     border-radius: 3px;
-    background-color: #e4eff9;
+    background: linear-gradient(to left,  #e2eff8 0%, #e2eff8 85%,#559dcf 15%,#559dcf 100%);
   }
 
   .dropdown-item:hover {
-    background-color: #adcae2;
+    background: linear-gradient(to left,  #bcdbf2 0%, #bcdbf2 85%,#3190d3 15%,#3190d3 100%);
   }
   
 }
