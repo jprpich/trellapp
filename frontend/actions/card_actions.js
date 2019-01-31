@@ -4,7 +4,7 @@ export const DELETE_CARD = "DELETE_CARD";
 
 export const createCard = (card) => dispatch => {
   return CardApiUtil.createCard(card).then(response => {
-    return dispatch({ type: RECEIVE_CARD, card: response });
+    return dispatch({ type: RECEIVE_CARD, data: response });
   }
   );
 };

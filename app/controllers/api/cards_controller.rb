@@ -19,6 +19,12 @@ class Api::CardsController < ApplicationController
     head :no_content
   end
 
+  # for testing only
+  def show 
+    @card = Card.find(params[:id])
+    render :show 
+  end
+
   private
   def card_params
     params.require(:card).permit(:title, :list_id)

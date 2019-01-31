@@ -5,7 +5,7 @@ import { merge } from 'lodash';
 const cardsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CARD:
-      return merge({}, state, {[action.card.id]: action.card});
+      return merge({}, state, {[action.data.card.id]: action.data.card});
     case RECEIVE_BOARD:
       return merge({}, action.data.cards);
     case DELETE_CARD:

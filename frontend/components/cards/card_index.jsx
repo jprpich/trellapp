@@ -9,6 +9,7 @@ class CardIndex extends React.Component {
     super(props);
   }
 
+
   render() {
     const cards = this.props.list.cardIds.map((cardId, index) => {
         return (
