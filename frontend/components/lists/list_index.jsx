@@ -35,27 +35,39 @@ class ListIndex extends React.Component {
       return;
     }
 
-    const list = this.state.lists[source.droppableId];
-    const newCardIds = Array.from(list.cardIds);
+    const start = this.state.lists[source.droppableId];
+    const finish = this.state.lists[destination.droppableId];
+    
+    if (start === finish){
+      const newCardIds = Array.from(start.cardIds);
 
 
-    newCardIds.splice(source.index, 1);
-    newCardIds.splice(destination.index, 0, draggableId);
+      newCardIds.splice(source.index, 1);
+      newCardIds.splice(destination.index, 0, draggableId);
 
 
-    const newList = {
-      ...list,
-      cardIds: newCardIds
-    };
+      const newList = {
+        ...start,
+        cardIds: newCardIds
+      };
 
-    const newState = {
-      ...this.state,
-      lists: {
-        ...this.state.lists,
-        [newList.id]: newList
+      const newState = {
+        ...this.state,
+        lists: {
+          ...this.state.lists,
+          [newList.id]: newList
+        }
       }
+      this.setState(newState)
+      return;
+
+
     }
-    this.setState(newState)
+
+    // Moving from one list to another
+    const startCardIds = Array.from(start.cardIds);
+
+    
 
 
   }
