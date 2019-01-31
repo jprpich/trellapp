@@ -66,9 +66,28 @@ class ListIndex extends React.Component {
 
     // Moving from one list to another
     const startCardIds = Array.from(start.cardIds);
+    startCardIds.splice(source.index, 1);
+    const newStart = {
+      ...start,
+      cardIds: startCardIds
+    };
 
-    
+    const finishCardIds = Array.from(finish.cardIds);
+    finishCardIds.splice(destination.index, 0, draggableId);
+    const newFinish = {
+      ...finish,
+      cardIds: finishCardIds
+    };
 
+    const newState = {  
+      ...this.state,
+      lists: {
+        ...this.state.lists,
+        [newStart.id]: newStart,
+        [newFinish.id]: newFinish
+      }
+    }
+    this.setState(newState)
 
   }
 
