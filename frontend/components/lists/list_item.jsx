@@ -22,7 +22,7 @@ class ListItem extends React.Component {
           {provided => {
             return (
               <div ref={provided.innerRef}  {...provided.droppableProps} >
-                <CardIndexContainer listId={this.props.list.id} />
+                <CardIndexContainer list={this.props.list} />
                 {provided.placeholder}
               </div>    
             )

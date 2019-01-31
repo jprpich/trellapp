@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   return {
-    cards: Object.values(state.entities.cards)
+    cards: state.entities.cards
   };
 };
 

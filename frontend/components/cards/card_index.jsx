@@ -10,17 +10,24 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    const cards = this.props.cards.map((card, index) => {
-      if (card.list_id == this.props.listId) {
-        return <CardItem key={card.id} card={card} deleteCard={this.props.deleteCard} index={index}></CardItem >
-      } else {
-        return null
-      }
+    const cards = this.props.list.cardIds.map((cardId, index) => {
+        return (
+        <CardItem key={cardId} card={this.props.cards[cardId]} deleteCard={this.props.deleteCard} index={index}></CardItem >
+        )
     })
+  
+
+    // const cards = this.props.cards.map((card, index) => {
+    //   if (card.list_id == this.props.listId) {
+    //     return <CardItem key={card.id} card={card} deleteCard={this.props.deleteCard} index={index}></CardItem >
+    //   } else {
+    //     return null
+    //   }
+    // })
     return (
       <div className="card-index">  
         {cards}
-        <CardFormContainer listId={this.props.listId}/>
+        <CardFormContainer listId={this.props.list.id}/>
       </div>
     )
   }

@@ -64,6 +64,8 @@ class ListIndex extends React.Component {
     })
 
     
+
+    
     return (
       <div className="list-index">
         <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
