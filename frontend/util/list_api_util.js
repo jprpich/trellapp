@@ -12,3 +12,10 @@ export const deleteList = (id) => {
     url: `api/lists/${id}`
   })
 }
+
+export const receiveLists = (id) => {
+  return $.ajax({
+    method: "get",
+    url: `api/boards/${id}/lists`
+  })
+}

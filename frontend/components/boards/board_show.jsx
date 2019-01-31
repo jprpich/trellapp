@@ -33,7 +33,7 @@ class BoardShow extends React.Component {
             </Link>
             <button className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</button>
           </div>
-          <ListIndexContainer />
+          <ListIndexContainer  />
         </div>
       )
     }

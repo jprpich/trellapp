@@ -10,11 +10,15 @@ class ListIndex extends React.Component {
     this.state = this.props.initialData;
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (this.props.lists && (Object.values(prevProps.lists).length !== Object.values(this.props.lists).length)){
-  //     this.setState({lists: this.props.lists})
-  //   }
-  // }
+  componentDidMount(){
+    this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.lists && (prevProps.lists.length !== this.props.lists.length)){
+      this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
+    }
+  }
 
   onDragEnd(result) {
     const { destination, source, draggableId } = result;
