@@ -1,6 +1,7 @@
 import React from 'react';
 import CardIndexContainer from '../cards/card_index_container';
 import { Droppable } from 'react-beautiful-dnd';
+import CardFormContainer from '../cards/card_form_container';
 
 class ListItem extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class ListItem extends React.Component {
           }}
           
         </Droppable>
+        <CardFormContainer listId={this.props.list.id}/>
       </div>
     )
   }
