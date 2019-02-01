@@ -29,7 +29,7 @@ class BoardShow extends React.Component {
         <div className="board-show">
           <div className="board-show-navbar">      
             <div onClick={this.props.editDropdown} className="board-title">{this.props.board.title}</div>
-            <button className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</button>
+            <span className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</span>
           </div>
           <ListIndexContainer  />
         </div>

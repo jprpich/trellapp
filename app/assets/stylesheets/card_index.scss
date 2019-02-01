@@ -2,11 +2,12 @@
   .card-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
-    margin: 0px 0px 10px 0px;
+    margin-bottom: 8px;
     border-radius: 3px;
-    padding: 6px;
-    width: 238px;
+    padding: 5px 10px;
+    width: 240px;
     color: #17394d;
     .delete-card {
       border-radius: 3px;

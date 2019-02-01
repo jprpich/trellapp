@@ -13,7 +13,12 @@
     }
     .delete-board {
       border-radius: 3px;
-      padding: 2px;
+      padding-right: 8px;
+      text-decoration: underline;
+      color: #f6f6f6;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 32px;
       height: 20px;
     }
   }
