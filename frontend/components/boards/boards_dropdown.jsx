@@ -12,7 +12,7 @@ class BoardsDropdown extends React.Component {
     })
     return (
       <div className="boards-dropdown">
-        <div className="recent-boards"><i class="far fa-clock"></i>recent boards</div>
+        <div className="recent-boards"><i className="far fa-clock"></i>recent boards</div>
           {boards}
       </div>
     )

@@ -20,17 +20,17 @@ class EditBoardForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="board-form">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <label htmlFor="title">title</label>
-          <input
-            id="title"
-            type="text"
-            onChange={this.updateTitle.bind(this)}
-            value={this.state.title}
-            placeholder="title"
-          />
-          <button>Rename</button>
+          <div className="form-title">
+            <input autoFocus={true}
+              type="text"
+              onChange={this.updateTitle.bind(this)}
+              value={this.state.title}
+              placeholder="title"
+            />
+          </div>
+          <button className="create-board-button">Rename</button>
         </form>
       </div>
     )
