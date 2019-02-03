@@ -10,12 +10,8 @@ class ListIndex extends React.Component {
     this.state = this.props.initialData;
   }
 
-  componentDidMount(){
-    this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
-  }
-
   componentDidUpdate(prevProps){
-    if (this.props.lists && (prevProps.lists.length !== this.props.lists.length)){
+    if (this.props.lists && (prevProps.lists.length !== this.props.lists.length) || (prevProps.board.id != this.props.match.params.boardId)){
       this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
     } else if (this.props.lists.length === 1 && (this.props.lists[0].cardIds.length !== prevProps.lists[0].cardIds.length)) {
       this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));

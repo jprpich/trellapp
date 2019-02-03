@@ -3,10 +3,11 @@ import Lists from './list_index';
 import { deleteList, receiveLists } from '../../actions/list_actions';
 import {withRouter} from 'react-router-dom';
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return {
     lists: Object.values(state.entities.lists),
-    initialData: state.entities
+    initialData: state.entities,
+    board: state.entities.boards[ownProps.match.params.boardId] || null
   } 
 };
 

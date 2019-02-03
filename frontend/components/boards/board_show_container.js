@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
-import {fetchBoard, deleteBoard} from '../../actions/board_actions';
+import {fetchBoard, deleteBoard, receiveBoards} from '../../actions/board_actions';
 import React from 'react';
 import { openModal } from '../../actions/modal_actions';
 
@@ -14,7 +14,8 @@ const mdp = (dispatch) => {
   return {
     fetchBoard: (id) => dispatch(fetchBoard(id)),
     deleteBoard: (id) => dispatch(deleteBoard(id)),
-    editDropdown: () => dispatch(openModal('edit board'))
+    editDropdown: () => dispatch(openModal('edit board')),
+    receiveBoards: () => dispatch(receiveBoards())
   }
 };
 
