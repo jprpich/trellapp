@@ -19,7 +19,6 @@ class Api::CardsController < ApplicationController
     head :no_content
   end
 
-  # for testing only
   def show 
     @card = Card.find(params[:id])
     render :show 

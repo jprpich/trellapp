@@ -11,7 +11,7 @@ function Modal({ modal, closeModal }) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.message) {
     case 'create board':
       component = <BoardFormContainer />;
       return (
@@ -40,7 +40,7 @@ function Modal({ modal, closeModal }) {
       </div>
     );
     case 'edit board':
-      component = <EditBoardFormContainer />;
+      component = <EditBoardFormContainer id={modal.id} />;
       return (
         <div className="modal-background" onClick={closeModal}>
           <div className="modal-child" onClick={e => e.stopPropagation()}>

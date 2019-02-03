@@ -3,9 +3,9 @@ import EditBoardForm from './edit_board_form';
 import {fetchBoard, updateBoard} from '../../actions/board_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
   return {
-    board: Object.values(state.entities.boards)[0] || null   
+    board: state.entities.boards[ownProps.id] || null   
   }
 };
 
