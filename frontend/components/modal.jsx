@@ -6,6 +6,8 @@ import ProfileDropdownContainer from './boards/profile_dropdown_container';
 import BoardsDropdownContainer from './boards/boards_dropdown_container';
 import EditBoardFormContainer from './boards/edit_board_form_container';
 import CardShowContainer from './cards/card_show_container';
+import ShowShareContainer from './boards/show_share_container';
+
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -58,11 +60,19 @@ function Modal({ modal, closeModal }) {
           </div>
         </div>
       )
+    case 'show share':
+      component = <ShowShareContainer/>;
+      return (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="card-show-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      )
     default:
       return null;
   }
 
-  
 }
 
 const mapStateToProps = state => {

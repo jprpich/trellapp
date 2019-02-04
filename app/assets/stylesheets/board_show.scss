@@ -2,14 +2,39 @@
   height: 100vh;
   background: #4891c5;
   .board-show-navbar {
+    .left-side {
+      display: flex;
+      margin: 5px;
+      .share-board {
+        i {
+          margin-right: 5px;
+        }
+        background: #69a2cd;
+        color: white;
+        border-radius: 3px;
+        border: none;
+        margin: 8px;
+        padding: 8px;
+      }
+      .share-board:hover {
+        background: #22629a;
+      }
+      .board-title {
+        margin: auto 10px;
+        color: #f6f6f6;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 4px 8px;
+        margin: 5px 5px 5px 16px;
+      }
+    }
     display: flex;
     justify-content: space-between;
-    .board-title {
-      margin: auto 10px;
-      color: #f6f6f6;
-      font-weight: 700;
-      padding: 8px;
-      cursor: pointer;
+    
+
+    .board-title:hover {
+      background: #22629a;
     }
     .delete-board {
       border-radius: 3px;

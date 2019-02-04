@@ -15,7 +15,8 @@ const mdp = (dispatch) => {
     fetchBoard: (id) => dispatch(fetchBoard(id)),
     deleteBoard: (id) => dispatch(deleteBoard(id)),
     editDropdown: (id) => dispatch(openModal('edit board', id)),
-    receiveBoards: () => dispatch(receiveBoards())
+    receiveBoards: () => dispatch(receiveBoards()),
+    showShare: () => dispatch(openModal('show share'))
   }
 };
 

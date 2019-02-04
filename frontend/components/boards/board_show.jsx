@@ -28,8 +28,14 @@ class BoardShow extends React.Component {
     } else {
       return (
         <div className="board-show">
-          <div className="board-show-navbar">      
-            <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">{this.props.board.title}</div>
+          <div className="board-show-navbar">  
+            <div className="left-side">
+              <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">{this.props.board.title}</div>
+              <button className="share-board" onClick={()=> this.props.showShare()}>
+                <i class="fas fa-user-plus"></i>
+                Share Board
+              </button>
+            </div>    
             <span className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</span>
           </div>
           <ListIndexContainer  />
