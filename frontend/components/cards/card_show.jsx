@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentFormContainer from '../comments/comment_form_container'
+import CommentIndexContainer from '../comments/comment_index_container'
 
 class CardShow extends React.Component {
   constructor(props) {
@@ -59,7 +60,8 @@ class CardShow extends React.Component {
           </div>
           <div className="comments">
             <h1><i className="far fa-comment"></i>Add Comment</h1>
-            <CommentFormContainer cardId={this.props.card.id}/>
+            <CommentFormContainer cardId={this.props.card.id} />
+            <CommentIndexContainer cardId={this.props.card.id} />
           </div>
           
         </div>

@@ -5,3 +5,10 @@ export const createComment = (comment) => {
     data: { comment }
   });
 };
+
+export const receiveComments = (id) => {
+  return $.ajax({
+    method: "get",
+    url: `api/cards/${id}/comments`
+  })
+}

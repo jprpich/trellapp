@@ -10,12 +10,16 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment({body: this.state.body, card_id: this.props.cardId, user_id: this.props.userId})
+    this.setState({
+      body: ""
+    })
   }
 
   updateBody(e){
     this.setState({
       body: e.target.value
     })
+    
   }
 
   render() {

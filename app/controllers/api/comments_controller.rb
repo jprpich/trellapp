@@ -9,6 +9,10 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def index 
+    @comments = Comment.all.where(card_id: params[:card_id])
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy 
