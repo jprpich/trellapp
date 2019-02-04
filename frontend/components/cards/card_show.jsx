@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentFormContainer from '../comments/comment_form_container'
 
 class CardShow extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class CardShow extends React.Component {
             </div>
           </div>
           <div className="description">
-            <h1><i class="fas fa-bars"></i>Description</h1>
+            <h1><i className="fas fa-bars"></i>Description</h1>
             <p>{this.props.card.description}</p>
             <form onSubmit={this.handleSubmit.bind(this)}>
               <textarea
@@ -57,14 +58,8 @@ class CardShow extends React.Component {
             </form>
           </div>
           <div className="comments">
-            <h1><i class="far fa-comment"></i>Add Comment</h1>
-            <form>
-              <textarea
-                placeholder="Write a comment..."
-              >
-              </textarea>
-              <button className="create-board-button">Save</button>
-            </form>
+            <h1><i className="far fa-comment"></i>Add Comment</h1>
+            <CommentFormContainer cardId={this.props.card.id}/>
           </div>
           
         </div>
