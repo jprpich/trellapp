@@ -12,7 +12,7 @@ class CardIndex extends React.Component {
   render() {
     const cards = this.props.list.cardIds.map((cardId, index) => {
         return (
-        <CardItem key={cardId} card={this.props.cards[cardId]} deleteCard={this.props.deleteCard} index={index}></CardItem >
+        <CardItem key={cardId} card={this.props.cards[cardId]} index={index} showCard={this.props.showCard}></CardItem >
         )
     })
   

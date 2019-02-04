@@ -3,7 +3,7 @@ import CardForm from './card_form';
 import { createCard } from '../../actions/card_actions';
 
 const msp = (state, ownProps) => ({
-  card: { title: "" }
+  card: { title: "", description: "" }
 });
 
 const mdp = dispatch => ({

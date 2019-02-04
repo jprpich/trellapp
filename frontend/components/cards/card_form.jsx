@@ -9,7 +9,7 @@ class CardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createCard({ title: this.state.title, list_id: this.props.listId});
+    this.props.createCard({ title: this.state.title, list_id: this.props.listId, description: ""});
     this.setState({
       title: ""
     })

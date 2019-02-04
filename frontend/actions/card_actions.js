@@ -9,9 +9,22 @@ export const createCard = (card) => dispatch => {
   );
 };
 
+export const updateCard = (card) => dispatch => {
+  return CardApiUtil.updateCard(card).then(response => {
+    return dispatch({ type: RECEIVE_CARD, data: response });
+  }
+  );
+};
+
+
 export const deleteCard = (id) => dispatch => {
   return CardApiUtil.deleteCard(id).then(() => {
     return dispatch({ type: DELETE_CARD, cardId: id });
   });
 };
 
+export const fetchCard = (id) => dispatch => {
+  return CardApiUtil.fetchCard(id).then(response => {
+    return dispatch({ type: RECEIVE_CARD, data: response });
+  });
+};

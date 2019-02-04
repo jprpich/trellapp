@@ -5,6 +5,7 @@ import BoardFormContainer from './boards/board_form_container';
 import ProfileDropdownContainer from './boards/profile_dropdown_container';
 import BoardsDropdownContainer from './boards/boards_dropdown_container';
 import EditBoardFormContainer from './boards/edit_board_form_container';
+import CardShowContainer from './cards/card_show_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -48,6 +49,15 @@ function Modal({ modal, closeModal }) {
           </div>
         </div>
       );
+    case 'show card':
+      component = <CardShowContainer id={modal.id}/>;
+      return (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="card-show-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      )
     default:
       return null;
   }

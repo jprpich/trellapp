@@ -6,9 +6,7 @@ class CardItem extends React.Component {
     super(props);
   }
 
-  deleteCard() {
-    this.props.deleteCard(this.props.card.id);
-  }
+  
 
   render() {
     if (this.props.card) {
@@ -17,12 +15,13 @@ class CardItem extends React.Component {
           {provided => {
             return (
               <div className="card-item"
+                onClick={()=> this.props.showCard(this.props.card.id)}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
               >
                 {this.props.card.title}
-                <button className="delete-card" onClick={this.deleteCard.bind(this)}><i className="fas fa-trash-alt"></i></button>
+
               </div>
             )
           }}

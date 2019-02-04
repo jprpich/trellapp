@@ -77,6 +77,14 @@ button {
   left: 0px;
 }
 
+.card-show-modal-child {
+  position: absolute;
+  top: 370px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
 textarea:focus, button:focus {
   outline: none;
 }
