@@ -12,7 +12,11 @@ Rails.application.routes.draw do
       resources :cards, only: [:create]
     end
 
-    resources :cards, only: [:destroy, :show, :update] 
+    resources :cards, only: [:destroy, :show, :update] do 
+      resources :comments, only: [:create]
+    end
+
+    resources :comments, only: [:destroy]
 
   end
 end

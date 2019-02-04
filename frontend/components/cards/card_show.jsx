@@ -3,7 +3,7 @@ import React from 'react';
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.card 
+    this.state = this.props.card
   }
 
   componentDidMount(){    
@@ -51,6 +51,16 @@ class CardShow extends React.Component {
                 onChange={this.updateDescription.bind(this)}
                 value={this.state.description}
                 placeholder="Add a more detailed description..."
+              >
+              </textarea>
+              <button className="create-board-button">Save</button>
+            </form>
+          </div>
+          <div className="comments">
+            <h1><i class="far fa-comment"></i>Add Comment</h1>
+            <form>
+              <textarea
+                placeholder="Write a comment..."
               >
               </textarea>
               <button className="create-board-button">Save</button>

@@ -5,7 +5,9 @@
   border-radius: 3px;
   padding: 20px 30px;
   color: #1e3a4b;
+  
   .header {
+
     display: flex;
     justify-content: space-between;
     .header-title {
@@ -41,31 +43,39 @@
     }
   }
   .description {
-    margin-top: 20px;
     i {
       font-size: 14px;
       margin-right: 10px;
     }
+    margin-top: 20px;
     p {
       font-size: 14px;
       margin-top: 20px;
     }
-    textarea {
-      margin-top: 20px;
-      display: block;
-      overflow: hidden;
-      overflow-wrap: break-word;
-      resize: none;
-      height: 108px;
-      background: #fff;
-      box-shadow: none;
-      color: #17394d;
-      box-sizing: border-box;
-      border: none;
-      width: 500px;
-      padding: 15px;
-      border-radius: 3px;
+    
+  }
+  textarea {
+    margin-top: 20px;
+    display: block;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    height: 108px;
+    background: #fff;
+    box-shadow: none;
+    color: #17394d;
+    box-sizing: border-box;
+    border: none;
+    width: 500px;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  .comments {
+    i {
       font-size: 14px;
+      margin-right: 10px;
     }
+    margin-top: 20px;
   }
 }
