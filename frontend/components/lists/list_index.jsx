@@ -83,6 +83,11 @@ class ListIndex extends React.Component {
         [newFinish.id]: newFinish
       }
     }
+    
+    this.props.updateCard({
+      id: draggableId,
+      list_id: destination.droppableId
+    })
     this.setState(newState)
 
   }

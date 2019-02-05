@@ -32,7 +32,7 @@ class BoardShow extends React.Component {
             <div className="left-side">
               <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">{this.props.board.title}</div>
               <button className="share-board" onClick={()=> this.props.showShare()}>
-                <i class="fas fa-user-plus"></i>
+                <i className="fas fa-user-plus"></i>
                 Share Board
               </button>
             </div>    
