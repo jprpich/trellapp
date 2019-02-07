@@ -1,21 +1,19 @@
 .list-form {
   height: 100%;
-  background-color: #3b68aa;
+  background-color: #4f72a7;
   border-radius: 3px;
-  padding: 10px;
+  padding: 8px;
   margin-left: 10px;
   font-weight: 700;
-  font-size: 16px;
   width: 250px;
-  input {
-    color: #17394d;
-    font-size: 16px;
-    background: #3b68aa;
-    border: none;
-    outline: 0;
-  }
-  input::placeholder {
+  cursor: pointer;
+  p {
+    font-size: 14px;
     color: #d6e1ee;
-    outline: 0;
+    margin-left: 15px;
   }
+}
+
+.list-form:hover {
+  background: #3b68aa;
 }

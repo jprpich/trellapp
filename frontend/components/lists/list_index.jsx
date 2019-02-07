@@ -116,7 +116,9 @@ class ListIndex extends React.Component {
           </DragDropContext>
           
           
-          <ListFormContainer />
+          <div className="list-form" onClick={()=> this.props.showListForm(this.props.match.params.boardId)}>           
+            <p>+ Add another list</p>
+          </div>
         </div>
       </div>
     )
