@@ -6,6 +6,10 @@ class Api::CardsController < ApplicationController
 
   def create 
     @card = Card.new(card_params)
+    
+    other_card_ords = @card.list.cards.map { |card| card[:ord] }.sort 
+    @card.ord = other_card_ords.empty? ? 0 : other_card_ords.last + 1
+
     if @card.save 
       render :show 
     else
