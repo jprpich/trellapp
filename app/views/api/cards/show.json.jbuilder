@@ -4,5 +4,5 @@ end
 
 json.list do 
   json.extract! @card.list, :id, :title
-  json.cardIds @card.list.cards.ids
+  json.cardIds @card.list.cards.order('ord').ids
 end

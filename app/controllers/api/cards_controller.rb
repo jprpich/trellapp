@@ -25,14 +25,17 @@ class Api::CardsController < ApplicationController
   end
 
   def update
-    @card = Card.find(params[:id])
+    @card = Card.find(params[:id]) 
     @card.update(card_params)
     render :show 
   end
 
+
+
+
   private
   def card_params
-    params.require(:card).permit(:title, :list_id, :description, :due_date)
+    params.require(:card).permit(:title, :list_id, :description, :due_date, :ord)
   end
 
 
