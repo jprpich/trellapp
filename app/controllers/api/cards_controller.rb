@@ -24,10 +24,33 @@ class Api::CardsController < ApplicationController
     render :show 
   end
 
-  def update
+  def update 
     @card = Card.find(params[:id]) 
     @card.update(card_params)
     render :show 
+  end
+
+  def update_ords
+    @card = Card.find(params[:id])
+    @card.list.cards.each do |card| 
+      if @card.ord < params[:card][:ord].to_i
+        if @card.id == card.id 
+          card.ord =  params[:card][:ord]
+          card.save 
+        elsif card.ord <= params[:card][:ord].to_i
+          card.ord -= 1
+          card.save 
+        end
+      else 
+        if @card.id == card.id 
+          card.ord = params[:card][:ord]
+          card.save 
+        elsif card.ord >= params[:card][:ord].to_i
+          card.ord += 1
+          card.save 
+        end
+      end
+    end
   end
 
 
@@ -37,6 +60,8 @@ class Api::CardsController < ApplicationController
   def card_params
     params.require(:card).permit(:title, :list_id, :description, :due_date, :ord)
   end
+
+  
 
 
 end

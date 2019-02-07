@@ -14,6 +14,13 @@ export const updateCard = (card) => {
   });
 };
 
+export const updateCardOrds = (card) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/update_ords/${card.id}`,
+    data: { card }
+  });
+};
 
 export const deleteCard = (id) => {
   return $.ajax({

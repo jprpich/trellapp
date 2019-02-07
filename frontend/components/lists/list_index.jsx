@@ -55,7 +55,7 @@ class ListIndex extends React.Component {
         }
       }
 
-      this.props.updateCard({
+      this.props.updateCardOrds({
         id: draggableId,
         ord: destination.index
       })
