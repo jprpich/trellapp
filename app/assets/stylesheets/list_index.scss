@@ -1,6 +1,15 @@
+.list-outer-index {
+  background: #2d90cb;
+  min-height: 100vh;
+}
 .list-index {
+  
   display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  
   .drag-drop-context {
+    margin-bottom: 30px;
     display: flex;
     height: 100%; 
     .list-item {

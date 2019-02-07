@@ -14,11 +14,13 @@
  *= require_self
  */
 
+
 body {
   font-size: 20px;
   font-weight: 300;
   line-height: 1.5;
   font-family: 'Sarabun', sans-serif;
+  
 }
 
 h1, h2, h3 {

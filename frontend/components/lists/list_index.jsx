@@ -107,15 +107,17 @@ class ListIndex extends React.Component {
 
     
     return (
-      <div className="list-index">
-        <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
-          <div className="drag-drop-context">
-            {lists}
-          </div>
-        </DragDropContext>
-        
-        
-        <ListFormContainer />
+      <div className="list-outer-index" >
+        <div className="list-index">
+          <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
+            <div className="drag-drop-context">
+              {lists}
+            </div>
+          </DragDropContext>
+          
+          
+          <ListFormContainer />
+        </div>
       </div>
     )
   }
