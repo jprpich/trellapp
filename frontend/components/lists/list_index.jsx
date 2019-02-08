@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { DragDropContext } from 'react-beautiful-dnd';
-import ListItem from './list_item';
+import ListItemContainer from './list_item_container';
 
 class ListIndex extends React.Component {
   constructor(props) {
@@ -96,7 +96,7 @@ class ListIndex extends React.Component {
 
   render() {
     const lists = Object.values(this.state.lists).map(list => {
-      return <ListItem key={list.id} list={list} deleteList={this.props.deleteList} />
+      return <ListItemContainer key={list.id} list={list} />
     })
 
     return (

@@ -1,15 +1,10 @@
 import React from 'react';
 import CardIndexContainer from '../cards/card_index_container';
 import { Droppable } from 'react-beautiful-dnd';
-import CardFormContainer from '../cards/card_form_container';
 
 class ListItem extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  deleteList() {
-    this.props.deleteList(this.props.list.id);
   }
 
   render() {
@@ -17,7 +12,9 @@ class ListItem extends React.Component {
       <div className="list-item">
         <div className="list-title">
           <h2>{this.props.list.title}</h2>
-          <button className="delete-list" onClick={this.deleteList.bind(this)}><i className="fas fa-trash-alt"></i></button>
+          <button className="delete-list" onClick={() =>this.props.deleteList(this.props.list.id)}>
+            <i className="fas fa-trash-alt"></i>
+          </button>
         </div>
         <Droppable droppableId={this.props.list.id.toString()}>
           {provided => {
@@ -30,7 +27,9 @@ class ListItem extends React.Component {
           }}
           
         </Droppable>
-        <CardFormContainer listId={this.props.list.id}/>
+        <div className="show-card-form" onClick={() => this.props.showCardForm(this.props.list.id)}>
+          <p>+ Add another card</p>
+        </div>
       </div>
     )
   }

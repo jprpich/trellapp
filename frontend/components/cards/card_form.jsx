@@ -9,7 +9,7 @@ class CardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createCard({ title: this.state.title, list_id: this.props.listId, description: ""});
+    this.props.createCard({ title: this.state.title, list_id: this.props.listId, description: ""}).then(this.props.closeModal);
     this.setState({
       title: ""
     })
@@ -23,15 +23,19 @@ class CardForm extends React.Component {
 
   render() {
     return (
-      <div className="card-form">
+      <div className="board-form">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input
-            type="text"
-            onChange={this.updateTitle.bind(this)}
-            value={this.state.title}
-            placeholder="+ Add another card"
-            autoFocus="autofocus"
-          />
+          <div className="form-title">
+            <input
+              type="text"
+              onChange={this.updateTitle.bind(this)}
+              value={this.state.title}
+              placeholder="+ Add another card"
+              autoFocus="autofocus"
+            />
+            <br/>
+            <button className="create-board-button">Add Card</button>
+          </div>
         </form>
       </div>
     )
