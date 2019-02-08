@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ListIndexContainer from '../lists/list_index_container';
 
 class BoardShow extends React.Component {
@@ -30,7 +29,9 @@ class BoardShow extends React.Component {
         <div className="board-show">
           <div className="board-show-navbar">  
             <div className="left-side">
-              <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">{this.props.board.title}</div>
+              <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">
+                {this.props.board.title}
+              </div>
               <button className="share-board" onClick={()=> this.props.showShare()}>
                 <i className="fas fa-user-plus"></i>
                 Share Board
@@ -38,7 +39,7 @@ class BoardShow extends React.Component {
             </div>    
             <span className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</span>
           </div>
-          <ListIndexContainer  />
+          <ListIndexContainer boardId={this.props.board.id} />
         </div>
       )
     }

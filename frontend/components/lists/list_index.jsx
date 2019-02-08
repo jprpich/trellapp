@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { DragDropContext } from 'react-beautiful-dnd';
 import ListItem from './list_item';
-import ListFormContainer from './list_form_container';
 
 class ListIndex extends React.Component {
   constructor(props) {
@@ -11,10 +10,10 @@ class ListIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (this.props.lists && (prevProps.lists.length !== this.props.lists.length) || (prevProps.board.id != this.props.match.params.boardId)){
-      this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
+    if (this.props.lists && (prevProps.lists.length !== this.props.lists.length) || (prevProps.board.id != this.props.boardId)){
+      this.props.receiveLists(this.props.boardId).then(() => this.setState(this.props.initialData));
     } else if (this.props.lists.length === 1 && (this.props.lists[0].cardIds.length !== prevProps.lists[0].cardIds.length)) {
-      this.props.receiveLists(this.props.match.params.boardId).then(() => this.setState(this.props.initialData));
+      this.props.receiveLists(this.props.boardId).then(() => this.setState(this.props.initialData));
     }
   }
 
@@ -37,10 +36,8 @@ class ListIndex extends React.Component {
     if (start === finish){
       const newCardIds = Array.from(start.cardIds);
 
-
       newCardIds.splice(source.index, 1);
       newCardIds.splice(destination.index, 0, draggableId);
-
 
       const newList = {
         ...start,
@@ -62,7 +59,6 @@ class ListIndex extends React.Component {
       
       this.setState(newState)
       return;
-
 
     }
 
@@ -103,9 +99,6 @@ class ListIndex extends React.Component {
       return <ListItem key={list.id} list={list} deleteList={this.props.deleteList} />
     })
 
-    
-
-    
     return (
       <div className="list-outer-index" >
         <div className="list-index">
@@ -113,10 +106,8 @@ class ListIndex extends React.Component {
             <div className="drag-drop-context">
               {lists}
             </div>
-          </DragDropContext>
-          
-          
-          <div className="list-form" onClick={()=> this.props.showListForm(this.props.match.params.boardId)}>           
+          </DragDropContext>      
+          <div className="list-form" onClick={()=> this.props.showListForm(this.props.boardId)}> 
             <p>+ Add another list</p>
           </div>
         </div>

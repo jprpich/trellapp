@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
   return {
     lists: Object.values(state.entities.lists),
     initialData: state.entities,
-    board: state.entities.boards[ownProps.match.params.boardId] || null
+    board: state.entities.boards[ownProps.boardId] || null
   } 
 };
 
