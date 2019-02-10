@@ -85,11 +85,13 @@ class ListIndex extends React.Component {
         [newFinish.id]: newFinish
       }
     }
-    
-    this.props.updateCard({
+
+    this.props.updateBetweenLists({
       id: draggableId,
+      ord: destination.index,
       list_id: destination.droppableId
     })
+
     this.setState(newState)
 
   }

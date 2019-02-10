@@ -64,6 +64,29 @@ class Api::CardsController < ApplicationController
     end
   end
 
+  def update_between_lists
+    
+    @card = Card.find(params[:id])
+    @card.list.cards.each do |card| 
+      if card.ord > @card.ord 
+        card.ord -= 1
+        card.save
+      end
+    end
+    
+    List.find(params[:card][:list_id]).cards.each do |card|
+      
+      if card.ord > params[:card][:ord].to_i
+        card.ord += 1
+        card.save
+      end
+      @card.ord = params[:card][:ord].to_i
+
+    end
+    @card.update(card_params)
+    render :show 
+  end
+
 
 
 

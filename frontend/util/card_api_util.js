@@ -22,6 +22,15 @@ export const updateCardOrds = (card) => {
   });
 };
 
+export const updateBetweenLists = (card) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/update_between_lists/${card.id}`,
+    data: { card }
+  });
+};
+
+
 export const deleteCard = (id) => {
   return $.ajax({
     method: "delete",
