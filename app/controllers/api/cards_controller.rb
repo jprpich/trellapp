@@ -19,6 +19,12 @@ class Api::CardsController < ApplicationController
 
   def destroy
     @card = Card.find(params[:id])
+    @card.list.cards.each do |card| 
+      if card.ord > @card.ord 
+        card.ord -= 1
+        card.save
+      end
+    end
     @card.destroy 
     head :no_content
   end
@@ -37,11 +43,12 @@ class Api::CardsController < ApplicationController
   def update_ords
     @card = Card.find(params[:id])
     @card.list.cards.each do |card| 
+      
       if @card.ord < params[:card][:ord].to_i
         if @card.id == card.id 
           card.ord =  params[:card][:ord]
           card.save 
-        elsif card.ord <= params[:card][:ord].to_i
+        elsif card.ord <= params[:card][:ord].to_i && card.ord > @card.ord
           card.ord -= 1
           card.save 
         end
@@ -49,7 +56,7 @@ class Api::CardsController < ApplicationController
         if @card.id == card.id 
           card.ord = params[:card][:ord]
           card.save 
-        elsif card.ord >= params[:card][:ord].to_i
+        elsif card.ord >= params[:card][:ord].to_i && card.ord < @card.ord
           card.ord += 1
           card.save 
         end
