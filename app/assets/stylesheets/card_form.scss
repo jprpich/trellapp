@@ -11,6 +11,24 @@
   }
 }
 
-.show-card-form:hover {
-  background: rgba(9,45,66,.13);
+.card-form {
+  background: #e0e3e6;
+  border-radius: 3px;
+  width: 296px;
+    padding: 10px 10px 10px 16px;
+
+  textarea {
+    margin-bottom: -5px;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    height: 37px;
+    width: 250px;
+    background: white;
+    border: none;
+    box-shadow: none;
+  }
 }

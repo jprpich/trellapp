@@ -19,6 +19,9 @@ class CardIndex extends React.Component {
     return (
       <div className="card-index">  
         {cards}
+        <div className="show-card-form" onClick={() => this.props.showCardForm(this.props.list.id)}>
+          <p>+ Add another card</p>
+        </div>
       </div>
     )
   }

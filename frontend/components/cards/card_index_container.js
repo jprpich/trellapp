@@ -11,7 +11,8 @@ const msp = (state) => {
 
 const mdp = dispatch => ({
   
-  showCard: (id) => dispatch(openModal('show card', id))
+  showCard: (id) => dispatch(openModal('show card', id)),
+  showCardForm: (id) => dispatch(openModal('show card form', id))
 });
 
 export default withRouter(connect(msp, mdp)(Cards));

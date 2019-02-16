@@ -27,9 +27,7 @@ class ListItem extends React.Component {
           }}
           
         </Droppable>
-        <div className="show-card-form" onClick={() => this.props.showCardForm(this.props.list.id)}>
-          <p>+ Add another card</p>
-        </div>
+        
       </div>
     )
   }
