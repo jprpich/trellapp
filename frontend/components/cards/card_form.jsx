@@ -28,7 +28,7 @@ class CardForm extends React.Component {
           <textarea
             onChange={this.updateTitle.bind(this)}
             value={this.state.title}
-            placeholder="+ Add another card"
+            placeholder="Enter a title for this card..."
             autoFocus="autofocus"
           />
           <br/>

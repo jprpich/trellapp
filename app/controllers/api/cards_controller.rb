@@ -6,7 +6,6 @@ class Api::CardsController < ApplicationController
 
   def create 
     @card = Card.new(card_params)
-    
     other_card_ords = @card.list.cards.map { |card| card[:ord] }.sort 
     @card.ord = other_card_ords.empty? ? 0 : other_card_ords.last + 1
 
@@ -86,15 +85,9 @@ class Api::CardsController < ApplicationController
     render :show 
   end
 
-
-
-
   private
   def card_params
     params.require(:card).permit(:title, :list_id, :description, :due_date, :ord)
   end
-
-  
-
 
 end
