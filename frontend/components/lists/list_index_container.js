@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Lists from './list_index';
-import { deleteList, receiveLists } from '../../actions/list_actions';
+import { receiveLists } from '../../actions/list_actions';
 import { updateCardOrds, updateBetweenLists } from '../../util/card_api_util';
 import {withRouter} from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';

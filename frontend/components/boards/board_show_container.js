@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
 import {fetchBoard, deleteBoard, receiveBoards} from '../../actions/board_actions';
-import React from 'react';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
