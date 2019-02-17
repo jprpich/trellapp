@@ -111,11 +111,11 @@ class ListIndex extends React.Component {
           <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
             <div className="drag-drop-context">
               {lists}
+              <div className="list-form" onClick={()=> this.props.showListForm(this.props.match.params.boardId)}> 
+                <p>+ Add another list</p>
+              </div>
             </div>
-          </DragDropContext>      
-          <div className="list-form" onClick={()=> this.props.showListForm(this.props.match.params.boardId)}> 
-            <p>+ Add another list</p>
-          </div>
+          </DragDropContext>
         </div>
       </div>
     )
