@@ -13,9 +13,7 @@
 
 .card-form {
   background: #e0e3e6;
-  border-radius: 3px;
-  // width: 296px;
-  padding: 10px;
+
 
   textarea {
     color: #17394d;
@@ -27,9 +25,17 @@
     overflow-wrap: break-word;
     resize: none;
     height: 37px;
-    width: 220px;
+    width: 240px;
     background: white;
     border: none;
     box-shadow: none;
+  }
+  i {
+    margin-left: 15px;
+    font-size: 18px;  
+    color: #798a93;
+  }
+  i:hover {
+    color: #6e7e87;
   }
 }

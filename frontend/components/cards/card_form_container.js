@@ -3,9 +3,11 @@ import CardForm from './card_form';
 import { createCard } from '../../actions/card_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const msp = (state, ownProps) => ({
-  card: { title: "", description: "" }
-});
+const msp = (state, ownProps) => {
+  return {
+      card: { title: "", description: "" },
+    }
+};
 
 const mdp = dispatch => ({
   createCard: (card) => dispatch(createCard(card)),
