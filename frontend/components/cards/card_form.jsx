@@ -10,7 +10,6 @@ class CardForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.hideCardForm();
     this.props.createCard({ title: this.state.title, list_id: this.props.listId, description: ""});
     this.setState({
       title: ""
@@ -22,8 +21,6 @@ class CardForm extends React.Component {
       title: e.target.value
     })
   }
-
-
 
   render() {
     return (
@@ -38,9 +35,9 @@ class CardForm extends React.Component {
           <br/>
           <div className="options">
           <button className="create-board-button">Add Card</button>
-            {/* <span>
+            <span onClick={this.props.closeCardForm}>
               <i className="fas fa-times"></i>
-            </span> */}
+            </span>
           </div>
         </form>
       </div>

@@ -6,25 +6,7 @@ import CardFormContainer from './card_form_container';
 class CardIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      displayCardForm: false
-    }
-    this.displayCardForm = this.displayCardForm.bind(this);
-    this.hideCardForm = this.hideCardForm.bind(this);
   }
-
-  displayCardForm(){
-    this.setState({
-      displayCardForm: true
-    })
-  }
-
-  hideCardForm(){
-    this.setState({
-      displayCardForm: false 
-    })
-  }
-
 
   render() {
     const cards = this.props.list.cardIds.map((cardId, index) => {
@@ -32,12 +14,11 @@ class CardIndex extends React.Component {
         <CardItem key={cardId} card={this.props.cards[cardId]} index={index} showCard={this.props.showCard}></CardItem >
       )
     })
-
-    if (this.state.displayCardForm){
+    if (this.props.display.displayCardForm && this.props.list.id === this.props.display.listId){
       return (
         <div className="card-index">  
         {cards}
-        <div className="show-card-form" onClick={this.displayCardForm}>
+        <div className="show-card-form">
           <CardFormContainer listId={this.props.list.id} hideCardForm={this.hideCardForm}/>
         </div>
       </div>
@@ -46,7 +27,7 @@ class CardIndex extends React.Component {
       return (
       <div className="card-index">  
         {cards}
-        <div className="show-card-form" onClick={this.displayCardForm}>
+        <div className="show-card-form" onClick={() =>this.props.displayCardForm(this.props.list.id)}>
           <p>+ Add another card</p>
         </div>
       </div>
