@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import CardItem from './card_item';
-
+import CardFormContainer from './card_form_container';
 
 class CardIndex extends React.Component {
   constructor(props) {
@@ -19,8 +19,9 @@ class CardIndex extends React.Component {
     return (
       <div className="card-index">  
         {cards}
-        <div className="show-card-form" onClick={() => this.props.showCardForm(this.props.list.id)}>
+        <div className="show-card-form">
           <p>+ Add another card</p>
+          <CardFormContainer listId={this.props.list.id}/>
         </div>
       </div>
     )
