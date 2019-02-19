@@ -7,11 +7,13 @@
   display: flex;
   overflow-x: auto;
   
+  
   .drag-drop-context {
     margin-bottom: 30px;
     display: flex;
     height: 100%; 
     .list-item {
+      position: relative;
       display: relative;
       height: 100%; 
       padding: 8px;

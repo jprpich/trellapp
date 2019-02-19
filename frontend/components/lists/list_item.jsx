@@ -12,24 +12,33 @@ class ListItem extends React.Component {
     if(this.props.display.displayListOptions && this.props.list.id === this.props.display.listId){
       displayOptions = 
         <div className="list-options-dropdown">
-          <div className="">List Actions</div>
-          <span onClick={this.props.closeListOptions}>
-            <i className="fas fa-times"></i>
-          </span>
-          <button>Delete This List</button>
+          <div className="title">
+            <div></div>
+            <div>List Actions</div>
+            <span onClick={this.props.closeListOptions}>
+              <i className="fas fa-times"></i>
+            </span>
+          </div>
+          
+          <div onClick={() => this.props.deleteList(this.props.list.id)} className="delete">
+            Delete This List
+          </div>
         </div>
     } else {
-      displayOptions = 
-      <button className="delete-list" onClick={() =>this.props.displayListOptions(this.props.list.id)}>
-        <i className="fas fa-ellipsis-h"></i>
-      </button>
+      displayOptions = ""
     }
 
     return (
+      <>
+      
       <div className="list-item">
+        {displayOptions}
         <div className="list-title">
           <h2>{this.props.list.title}</h2>
-          {displayOptions}
+          
+          <button className="delete-list" onClick={() =>this.props.displayListOptions(this.props.list.id)}>
+            <i className="fas fa-ellipsis-h"></i>
+          </button>
         </div>
         <Droppable droppableId={this.props.list.id.toString()}>
           {provided => {
@@ -44,6 +53,7 @@ class ListItem extends React.Component {
         </Droppable>
         
       </div>
+      </>
     )
   }
 }

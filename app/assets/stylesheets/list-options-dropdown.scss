@@ -1,4 +1,30 @@
 .list-options-dropdown {
+  border: 1px solid #dfe4e7;
+  .title {
+    font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+    padding: 5px;
+    display: flex;  
+    justify-content: space-between;
+    border-bottom: 1px solid #dfe4e7;
+  }
+  i {
+    cursor: pointer;
+  }
+  .delete {
+    margin-top: 5px;
+    color: #16394d;
+    font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .delete:hover {
+    background: #348fca;
+    color: white;
+  }
+  position: absolute;
+  z-index: 2;
+  top: 42px;
+  left: 240px;
   color: #6b808c;
   background: white;
   width: 260px;
