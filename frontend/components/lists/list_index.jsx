@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { DragDropContext } from 'react-beautiful-dnd';
 import ListItemContainer from './list_item_container';
+import ListFormContainer from './list_form_container';
 
 class ListIndex extends React.Component {
   constructor(props) {
@@ -105,15 +106,23 @@ class ListIndex extends React.Component {
       return <ListItemContainer key={list.id} list={list} />
     })
 
+    let listForm
+    if(this.props.display.displayListForm) {
+      listForm = <ListFormContainer boardId={this.props.board.id}/>;
+    } else {
+      listForm = <div className="list-form" onClick={()=> this.props.displayListForm(this.props.match.params.boardId)}> 
+      <p>+ Add another list</p>
+    </div>
+    }
+    
+
     return (
       <div className="list-outer-index" >
         <div className="list-index">
           <DragDropContext onDragEnd={this.onDragEnd.bind(this)}>
             <div className="drag-drop-context">
               {lists}
-              <div className="list-form" onClick={()=> this.props.showListForm(this.props.match.params.boardId)}> 
-                <p>+ Add another list</p>
-              </div>
+              {listForm}
             </div>
           </DragDropContext>
         </div>

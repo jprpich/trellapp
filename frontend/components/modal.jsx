@@ -7,8 +7,6 @@ import BoardsDropdownContainer from './boards/boards_dropdown_container';
 import EditBoardFormContainer from './boards/edit_board_form_container';
 import CardShowContainer from './cards/card_show_container';
 import ShowShareContainer from './boards/show_share_container';
-import ListFormContainer from './lists/list_form_container';
-import CardFormContainer from './cards/card_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -66,24 +64,6 @@ function Modal({ modal, closeModal }) {
       return (
         <div className="modal-background" onClick={closeModal}>
           <div className="card-show-modal-child" onClick={e => e.stopPropagation()}>
-            {component}
-          </div>
-        </div>
-      )
-    case 'show list form':
-      component = <ListFormContainer boardId={modal.id}/>;
-      return (
-        <div className="modal-background" onClick={closeModal}>
-          <div className="modal-child" onClick={e => e.stopPropagation()}>
-            {component}
-          </div>
-        </div>
-      )
-    case 'show card form':
-      component = <CardFormContainer listId={modal.id}/>;
-      return (
-        <div className="modal-background" onClick={closeModal}>
-          <div className="modal-child" onClick={e => e.stopPropagation()}>
             {component}
           </div>
         </div>

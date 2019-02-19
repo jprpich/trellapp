@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import ListForm from './list_form';
 import { createList } from '../../actions/list_actions';
-import { closeModal } from '../../actions/modal_actions';
-const msp = state => ({
-  list: { title: "" }
-});
+import { closeListForm } from '../../actions/dropdown_actions';
+const msp = state => {
+  return {
+    list: { title: "" }
+  }
+};
 
 const mdp = dispatch => ({
   createList: (list) => dispatch(createList(list)),
-  closeModal: () => dispatch(closeModal()),
+  closeListForm: () => dispatch(closeListForm())
 });
 
 export default connect(msp, mdp)(ListForm);

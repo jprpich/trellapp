@@ -19,7 +19,7 @@ class CardIndex extends React.Component {
         <div className="card-index">  
         {cards}
         <div className="show-card-form">
-          <CardFormContainer listId={this.props.list.id} hideCardForm={this.hideCardForm}/>
+          <CardFormContainer listId={this.props.list.id} />
         </div>
       </div>
       )     

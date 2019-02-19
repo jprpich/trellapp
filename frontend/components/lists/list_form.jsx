@@ -22,26 +22,24 @@ class ListForm extends React.Component {
   }
 
   render() {
-
     return (
-      <>
-        <div className="board-form"> 
-          <form onSubmit={this.handleSubmit.bind(this)}>
-              <div className="form-title">
-                <input
-                  type="text"
-                  onChange={this.updateTitle.bind(this)}
-                  value={this.state.title}
-                  placeholder="Enter list title..."
-                  autoFocus="autofocus"
-                />
-                <br/>
-                <button className="create-board-button">Add List</button>
-              </div>
-          </form>
-          
-        </div>
-      </>
+      <div className="list-form-dropwdown">
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input
+            onChange={this.updateTitle.bind(this)}
+            value={this.state.title}
+            placeholder="Enter list title..."
+            autoFocus="autofocus"
+          />
+          <br/>
+          <div className="options">
+            <button className="create-board-button">Add List</button>
+            <span onClick={this.props.closeListForm}>
+              <i className="fas fa-times"></i>
+            </span>
+          </div>
+        </form>
+      </div>
     )
   }
 }
