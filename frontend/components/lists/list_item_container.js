@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import ListItem from './list_item';
-import { deleteList } from '../../actions/list_actions';
+import { displayListOptions, closeListOptions } from '../../actions/dropdown_actions';
 
 const msp = (state) => {
   return {
+    display: state.ui.dropdown
   } 
 };
 
 const mdp = dispatch => ({
-  deleteList: (listId) => dispatch(deleteList(listId)),
-  
+  displayListOptions: (listId) => dispatch(displayListOptions(listId)),
+  closeListOptions: () => dispatch(closeListOptions())
 });
 
 export default connect(msp, mdp)(ListItem);

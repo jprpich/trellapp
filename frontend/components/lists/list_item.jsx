@@ -8,13 +8,28 @@ class ListItem extends React.Component {
   }
 
   render() {
+    let displayOptions;
+    if(this.props.display.displayListOptions && this.props.list.id === this.props.display.listId){
+      displayOptions = 
+        <div className="list-options-dropdown">
+          <div className="">List Actions</div>
+          <span onClick={this.props.closeListOptions}>
+            <i className="fas fa-times"></i>
+          </span>
+          <button>Delete This List</button>
+        </div>
+    } else {
+      displayOptions = 
+      <button className="delete-list" onClick={() =>this.props.displayListOptions(this.props.list.id)}>
+        <i className="fas fa-ellipsis-h"></i>
+      </button>
+    }
+
     return (
       <div className="list-item">
         <div className="list-title">
           <h2>{this.props.list.title}</h2>
-          <button className="delete-list" onClick={() =>this.props.deleteList(this.props.list.id)}>
-            <i className="fas fa-trash-alt"></i>
-          </button>
+          {displayOptions}
         </div>
         <Droppable droppableId={this.props.list.id.toString()}>
           {provided => {

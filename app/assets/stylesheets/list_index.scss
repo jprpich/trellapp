@@ -12,6 +12,7 @@
     display: flex;
     height: 100%; 
     .list-item {
+      display: relative;
       height: 100%; 
       padding: 8px;
       margin-left: 10px;
@@ -26,16 +27,23 @@
         margin-left: 13px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 8px;
       }
     
       .delete-list {
+        width: 30px;
+        height: 30px;
+        background: #e0e3e6;
+        border: none;
         border-radius: 3px;
-        padding: 5px;
-        background: #6496c4;
+        padding: 10px;
         i {
-          color: white;
+          color: #6a8492;
         }
+      }
+      .delete-list:hover {
+        background: #c3ccd0;
       }
     }
   }

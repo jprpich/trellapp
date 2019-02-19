@@ -30,8 +30,15 @@
     border: none;
     box-shadow: none;
   }
+  .options {
+    display: flex;
+    align-items: center;
+    span {
+      display: flex;
+    }
+  }
   i {
-    margin-left: 15px;
+    margin-left: 10px;
     font-size: 18px;  
     color: #798a93;
   }
