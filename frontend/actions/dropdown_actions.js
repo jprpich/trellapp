@@ -4,6 +4,8 @@ export const DISPLAY_LIST_FORM = "DISPLAY_LIST_FORM";
 export const CLOSE_LIST_FORM = "CLOSE_LIST_FORM";
 export const DISPLAY_LIST_OPTIONS = "DISPLAY_LIST_OPTIONS";
 export const CLOSE_LIST_OPTIONS = "CLOSE_LIST_OPTIONS"; 
+export const DISPLAY_SHARE_OPTIONS = "DISPLAY_SHARE_OPTIONS";
+export const CLOSE_SHARE_OPTIONS = "CLOSE_SHARE_OPTIONS";
 
 export const displayCardForm = (listId) => {
   return {
@@ -57,6 +59,24 @@ export const closeListOptions = () => {
     type: CLOSE_LIST_OPTIONS,
     display: {
       displayListOptions: false
+    }
+  };
+};
+
+export const displayShareOptions= () => {
+  return {
+    type: DISPLAY_SHARE_OPTIONS,
+    display: {
+      displayShareOptions: true,
+    }
+  };
+};
+
+export const closeShareOptions = () => {
+  return {
+    type: CLOSE_SHARE_OPTIONS,
+    display: {
+      displayShareOptions: false
     }
   };
 };

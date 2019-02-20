@@ -22,6 +22,26 @@ class BoardShow extends React.Component {
   }
 
   render() {
+    let share;
+    if (this.props.display.displayShareOptions){
+      share = 
+        <div className="share-board-dropdown">
+          <div className="title">
+            <div></div>
+            <div>Board Members</div>   
+            <span onClick={this.props.closeShareOptions}>
+              <i className="fas fa-times"></i>
+            </span>
+          </div> 
+          
+          <div className="board-members">
+            <div>{this.props.users[this.props.userId].email}</div>
+          </div>
+        </div>
+    } else {
+      share = ""
+    }
+
     if (!this.props.board){
       return null;
     } else {
@@ -32,7 +52,13 @@ class BoardShow extends React.Component {
               <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">
                 {this.props.board.title}
               </div>
-            </div>    
+              <div className="invite-container">
+                <div className="invite" onClick={this.props.displayShareOptions}>
+                  <i className="fas fa-user"></i>Invite     
+                </div>  
+                {share}   
+              </div>
+            </div>
             <span className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</span>
           </div>
           <ListIndexContainer boardId={this.props.board.id} />

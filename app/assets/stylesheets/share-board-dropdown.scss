@@ -1,0 +1,30 @@
+.share-board-dropdown {
+  border: 1px solid #dfe4e7;
+  .title {
+    font-size: 16px;
+    font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+    padding: 5px;
+    display: flex;  
+    justify-content: space-between;
+    border-bottom: 1px solid #dfe4e7;
+  }
+  .board-members {
+    font-size: 16px;
+    padding: 5px;
+    color: black;  
+  }
+  i {
+    cursor: pointer;
+  }
+
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  left: 5px;
+  color: #6b808c;
+  background: white;
+  width: 260px;
+  height: 100px;
+  border-radius: 3px;
+  padding: 5px;
+}

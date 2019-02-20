@@ -1,6 +1,7 @@
 .board-show {
   background: #2d90cb;
   .board-show-navbar {
+    position: relative;
     .left-side {
       display: flex;
       margin: 5px;
@@ -26,6 +27,30 @@
         border-radius: 3px;
         padding: 4px 8px;
         margin: 5px 5px 5px 16px;
+      }
+      .invite-container {
+        position: relative; 
+        display: flex;
+        .invite {
+          i {
+            margin-right: 10px;
+          }
+          font-size: 14px;
+          margin: auto 10px;
+          color: white;
+          background: #5a97c2;
+          margin-left: 2px;
+          padding: 8px 12px;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        .invite:hover {
+          background: #1a5585;
+        }
+      }
+      
+      .share-container {
+        background: white;
       }
     }
     display: flex;
