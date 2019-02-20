@@ -1,0 +1,25 @@
+.comment-index {
+  margin-top: 20px;
+  width: 500px;
+  .comment-item{
+    padding: 20px 0;
+    h3 {
+      font-size: 15px;
+    }
+    .creator{
+
+    }
+  
+    .comment-body {
+      background: white;
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    .reactions {
+  
+    }
+    border-bottom: 1px solid #cdd5d9;
+  }
+  
+}

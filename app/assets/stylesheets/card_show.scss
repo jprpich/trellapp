@@ -2,10 +2,13 @@
   background-color: #eceef0;
   width: 700px;
   height: 620px;
+  overflow-y: scroll;
   border-radius: 3px;
   padding: 20px 30px;
   color: #1e3a4b;
-  
+  h1 {
+    font-size: 16px;
+  }
   .header {
 
     display: flex;
@@ -71,7 +74,17 @@
     border-radius: 3px;
     font-size: 14px;
   }
+  .comment-form {
+    height: 68px;
+  }
   .comments {
+    .add-comment-title{
+      margin-top: 20px;
+    }
+    .activity-title {
+      margin-top: 20px;
+      margin-bottom: -30px;
+    }
     i {
       font-size: 14px;
       margin-right: 10px;

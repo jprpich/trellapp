@@ -18,14 +18,6 @@ class Boards extends React.Component {
     return (
       <div className="boards-main">
         <div className="left">
-          {/* <ul>
-            <li id="first-board">
-              <Link to="/"><i className="fas fa-poll"></i>Boards</Link>
-            </li>
-            <li>
-              <Link to="/"><i className="fas fa-tablet-alt"></i>Home</Link>
-            </li>
-          </ul> */}
         </div>
         <div className="all-boards">
           <div className="section-header">

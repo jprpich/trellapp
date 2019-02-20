@@ -31,6 +31,21 @@ class CardShow extends React.Component {
   }
 
   render() {
+    let form;
+    if (this.props.card && this.props.card.description){
+      form = "";
+    } else {
+      form = 
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        <textarea
+          onChange={this.updateDescription.bind(this)}
+          value={this.state.description}
+          placeholder="Add a more detailed description..."
+        >
+        </textarea>
+        <button className="create-board-button">Save</button>
+      </form>
+    }
     if (!this.props.card){
       return null;
     } else {
@@ -48,19 +63,12 @@ class CardShow extends React.Component {
           <div className="description">
             <h1><i className="fas fa-bars"></i>Description</h1>
             <p>{this.props.card.description}</p>
-            <form onSubmit={this.handleSubmit.bind(this)}>
-              <textarea
-                onChange={this.updateDescription.bind(this)}
-                value={this.state.description}
-                placeholder="Add a more detailed description..."
-              >
-              </textarea>
-              <button className="create-board-button">Save</button>
-            </form>
+            {form}
           </div>
           <div className="comments">
-            <h1><i className="far fa-comment"></i>Add Comment</h1>
+            <h1 className="add-comment-title"><i className="far fa-comment"></i>Add Comment</h1>
             <CommentFormContainer cardId={this.props.card.id} />
+            <h1 className="activity-title"><i className="far fa-comments"></i>Activity</h1>
             <CommentIndexContainer cardId={this.props.card.id} />
           </div>
           
