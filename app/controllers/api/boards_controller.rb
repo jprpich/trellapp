@@ -1,11 +1,13 @@
 class Api::BoardsController < ApplicationController 
   def index
-    @boards = current_user.boards 
+    @boards = current_user.boards
   end
 
   def create
-    @board = current_user.boards.new(board_params) 
+    @board = Board.new(board_params)
+    @board.user_id = current_user.id 
     if @board.save 
+      BoardShare.create(user: current_user, board: @board)
       render :show 
     else 
       render json: @board.errors.full_messages, status: 422 
@@ -13,7 +15,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def update 
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
     if @board.update(board_params)
       render :show 
     else
@@ -22,12 +24,12 @@ class Api::BoardsController < ApplicationController
   end
 
   def show 
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
     render :show
   end
 
   def destroy 
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
     @board.destroy 
     head :no_content
   end

@@ -5,7 +5,8 @@ class User < ApplicationRecord
 
   attr_reader :password
   after_initialize :ensure_session_token
-  has_many :boards 
+  has_many :board_shares
+  has_many :boards, through: :board_shares  
   has_many :comments
   
   def self.find_by_credentials(email, password)
