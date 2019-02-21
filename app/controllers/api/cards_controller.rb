@@ -35,7 +35,8 @@ class Api::CardsController < ApplicationController
 
   def update 
     @card = Card.find(params[:id]) 
-    @card.update(card_params)
+    @card.description = params[:card][:description]
+    @card.save 
     render :show 
   end
 
