@@ -9,6 +9,7 @@ class BoardShow extends React.Component {
   componentDidMount(){
     this.props.fetchBoard(this.props.match.params.boardId);
     this.props.receiveBoards();
+    this.props.receiveUsers();
   }
 
   componentDidUpdate(prevProps){
@@ -23,6 +24,9 @@ class BoardShow extends React.Component {
 
   render() {
     let share;
+    let users = this.props.users.map(user => {
+      return <li key={user.id}>{user.email}</li>
+    })
     if (this.props.display.displayShareOptions){
       share = 
         <div className="share-board-dropdown">
@@ -32,11 +36,22 @@ class BoardShow extends React.Component {
             <span onClick={this.props.closeShareOptions}>
               <i className="fas fa-times"></i>
             </span>
-          </div> 
-          
-          <div className="board-members">
-            <div>{this.props.users[this.props.userId].email}</div>
           </div>
+
+          <div className="title">
+            <div></div>
+            <div>Share with</div>
+            <div></div>
+          </div>
+
+          <form action="">
+            <input type="text"/>
+            <input type="submit"/>
+          </form>
+
+          <ul className="board-members">
+            {users}
+          </ul>
         </div>
     } else {
       share = ""
