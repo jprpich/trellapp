@@ -13,15 +13,38 @@ class BoardShare extends React.Component {
     this.setState({inputVal: event.currentTarget.value});
   }
 
+  matches() {
+    let emails = this.props.users.map(user=> user.email)
+    const matches = [];
+    if (this.state.inputVal.length === 0) {
+      return [];
+    }
+
+    emails.forEach(email => {
+      const sub = email.slice(0, this.state.inputVal.length);
+      if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
+        matches.push(email);
+      }
+    });
+
+    if (matches.length === 0) {
+      matches.push('No matches');
+    }
+
+    return matches;
+  }
+
   componentDidMount(){
     this.props.receiveUsers();
   }
 
   render(){
     let share;
-    let users = this.props.users.map(user => {
-      return <li key={user.id}>{user.email}</li>
-    })
+    const results = this.matches().map((result, i) => {
+      return (
+        <li key={i}>{result}</li>
+      );
+    }); 
     if (this.props.display.displayShareOptions){
       share = 
         <div className="share-board-dropdown">
@@ -47,7 +70,7 @@ class BoardShare extends React.Component {
           />
 
           <ul className="board-members">
-            {users}
+            {results}
           </ul>
         </div>
     } else {
