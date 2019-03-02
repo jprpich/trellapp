@@ -35,9 +35,8 @@ class BoardShare extends React.Component {
   }
 
   selectUser(event) {
-    const user = event.currentTarget.innerText;
-    this.setState({inputVal: user});
     this.props.shareBoard({user_id: event.target.id, board_id: this.props.boardId});
+    this.setState({inputVal: ""});
   }
 
   componentDidMount(){
@@ -62,18 +61,15 @@ class BoardShare extends React.Component {
             </span>
           </div>
 
-          <div className="title">
-            <div></div>
-            <div>Share with</div>
-            <div></div>
+          <div className="share-with">
+            <div className="share-title">Share with</div>
+            <input 
+              type="text" 
+              onChange={this.handleInput}
+              value={this.state.inputVal}
+              placeholder='email...'
+            />
           </div>
-
-          <input 
-            type="text" 
-            onChange={this.handleInput}
-            value={this.state.inputVal}
-            placeholder='Search...'
-          />
 
           <ul className="board-members">
             {results}

@@ -8,11 +8,32 @@
     justify-content: space-between;
     border-bottom: 1px solid #dfe4e7;
   }
+
+  .share-with {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    .share-title {
+      margin-right: 5px;
+      font-size: 16px;
+      font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+      text-align: center;
+    }
+
+    input {
+      width: 160px;
+      padding: 5px;
+      margin: 3px 7px 3px 0;
+      border-radius: 3px;
+      outline: none;
+      border: 1px solid #ccc;
+    }
+  }
   .board-members {
     font-size: 14px;
     padding: 5px;
     color: black;  
-    border-bottom: 1px solid #dfe4e7;
+    cursor: pointer;
   }
   i {
     cursor: pointer;
