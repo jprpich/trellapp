@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
     patch '/update_ords/:id', to: "cards#update_ords"
     patch '/update_between_lists/:id', to: "cards#update_between_lists"
+    post '/share', to: "board_shares#share"
+
     resources :users, only: [:index, :create]
     resource :session, only: [:create, :destroy]
     resources :boards, only: [:index, :create, :show, :destroy, :update] do

@@ -33,7 +33,7 @@ class BoardShow extends React.Component {
               <div onClick={() => this.props.editDropdown(this.props.board.id)} className="board-title">
                 {this.props.board.title}
               </div>
-              <BoardShareContainer />
+              <BoardShareContainer boardId={this.props.board.id} />
             </div>
             <span className="delete-board" onClick={this.deleteBoard.bind(this)}>Delete Board</span>
           </div>
