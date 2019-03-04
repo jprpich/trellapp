@@ -35,7 +35,7 @@ class BoardShare extends React.Component {
   }
 
   selectUser(event) {
-    this.props.shareBoard({user_id: event.target.id, board_id: this.props.boardId});
+    this.props.shareBoard({user_id: event.target.id, board_id: this.props.board.id});
     this.setState({inputVal: ""});
   }
 
@@ -51,15 +51,26 @@ class BoardShare extends React.Component {
       );
     }); 
     if (this.props.display.displayShareOptions){
+      let emails 
+      if (this.props.board.userIds) {
+        emails = this.props.board.userIds.map(id => {
+          return <li key={id}>{this.props.users.find(x => x.id === id).email}</li>
+        })
+      } else {
+        emails = ""
+      }
       share = 
         <div className="share-board-dropdown">
           <div className="title">
             <div></div>
-            <div>Board Members</div>   
+            <div>Board Members</div> 
             <span onClick={this.props.closeShareOptions}>
               <i className="fas fa-times"></i>
             </span>
           </div>
+          <ul>
+            {emails}
+          </ul>  
 
           <div className="share-with">
             <div className="share-title">Share with</div>

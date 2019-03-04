@@ -1,5 +1,6 @@
 json.board do 
   json.extract! @board, :id, :title
+  json.userIds @board.users.ids
 end
 
 json.lists do 

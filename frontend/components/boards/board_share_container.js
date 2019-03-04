@@ -5,10 +5,10 @@ import { displayShareOptions, closeShareOptions } from '../../actions/dropdown_a
 import { receiveUsers } from '../../actions/user_actions';
 import { shareBoard } from '../../util/board_share_api_util';
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
   return {
     display: state.ui.dropdown,
-    users: Object.values(state.entities.users)
+    users: Object.values(state.entities.users),
   }
 }
 
