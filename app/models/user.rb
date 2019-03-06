@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   attr_reader :password
   after_initialize :ensure_session_token
-  has_many :board_shares
+  has_many :board_shares, dependent: :destroy
   has_many :boards, through: :board_shares  
   has_many :comments
   

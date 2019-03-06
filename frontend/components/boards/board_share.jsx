@@ -68,7 +68,7 @@ class BoardShare extends React.Component {
               <i className="fas fa-times"></i>
             </span>
           </div>
-          <ul>
+          <ul className="emails">
             {emails}
           </ul>  
 
