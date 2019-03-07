@@ -28,7 +28,7 @@ Boards contain lists which contain cards. Cards have a title and description. Ca
 To move positions, trellapp integrates the react-bautiful-dnd library to the applications functionality.
 
 
-![](https://github.com/jprpich/trellapp/blob/master/first.gif)
+![](https://github.com/jprpich/trellapp/blob/master/second.gif)
 
 
 
