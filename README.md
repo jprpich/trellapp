@@ -23,7 +23,7 @@ Trellapp, a Trello clone, is an app where users can create multiple boards where
 
 Boards contain lists which contain cards. Cards have a title and description. Cards can be moved from one list to another
 
-![wireframes](https://github.com/jprpich/trellapp/boards-index.png)
+![wireframes](https://github.com/jprpich/trellapp/blob/master/boards-index.png)
 
 To move positions, trellapp integrates the react-bautiful-dnd library to the applications functionality.
 ```js
