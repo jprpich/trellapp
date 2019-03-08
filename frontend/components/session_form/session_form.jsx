@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form">        
         {error}
-        <h1>{this.props.formType === "signup" ? "Create a Trello Account" : "Log in to Trello"}</h1>
+        <h1>{this.props.formType === "signup" ? "Create a Trellapp Account" : "Log in to Trellapp"}</h1>
         <div className="create-account-quiet">
           or <Link 
                to={this.props.formType === "signup" ? "/login" : "/signup"}>{this.props.formType === "signup" ? "sign in to your account" : "create an account"}
@@ -114,13 +114,16 @@ class SessionForm extends React.Component {
         <footer>
           <ul>
             <li>
-              <a href="https://github.com/jprpich" target="_blank">Joshua Prpich Github</a>
+              <a href="https://github.com/jprpich" target="_blank">Github</a>
             </li>
             <li>
-              <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/joshua-mark-prpich/" target="_blank">LinkedIn</a>
             </li>
             <li>
-              <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+              <a href="https://angel.co/joshua-mark-prpich-1" target="_blank">AngelList</a>
+            </li>
+            <li>
+              <a href="https://jprpich.github.io/" target="_blank">Personal Site</a>
             </li>
           </ul>
           <p>© Copyright 2019. All rights reserved.</p>
