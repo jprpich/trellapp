@@ -23,6 +23,23 @@ class GreetingMain extends React.Component {
             <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/308998dcb3ed5ab3d01217a4d24ffa03/hero-a.svg" alt=""/>
           </div>
         </div>
+        <footer>
+          <ul>
+            <li>
+              <a href="https://github.com/jprpich" target="_blank">Github</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/joshua-mark-prpich/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://angel.co/joshua-mark-prpich-1" target="_blank">AngelList</a>
+            </li>
+            <li>
+              <a href="https://jprpich.github.io/" target="_blank">Personal Site</a>
+            </li>
+          </ul>
+          <p>© Copyright 2019. All rights reserved.</p>
+        </footer>
       </div>
       </>
     )

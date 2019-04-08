@@ -94,25 +94,23 @@
     border-radius: 4px;
     margin-bottom: 10px;
   }
-
-  footer {
-    font-size: 16px;
-    margin-top: 250px;
-    text-align: center;
-    
-    ul {
-      display: flex;
-      justify-content: center;
-    }
-    li {
-        padding: 10px;
-    }
-    a {
-      color: #999;
-      text-decoration: underline;
-      
-    }
-  }
-
 } 
 
+footer {
+  font-size: 16px;
+  margin-top: 250px;
+  text-align: center;
+  
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  li {
+      padding: 10px;
+  }
+  a {
+    color: #999;
+    text-decoration: underline;
+    
+  }
+}
